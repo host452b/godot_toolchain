@@ -115,14 +115,20 @@ python3 -m pytest tests/ -v
 ## 项目结构
 
 ```
-collect.sh                 # 阶段 A 采集脚本
-load.py                    # 阶段 B 装载脚本
+collect.sh                 # 阶段 A 采集脚本(gh → JSONL)
+load.py                    # 阶段 B 装载脚本(JSONL → godot.db)
 verify.sh                  # 验收脚本
 tests/test_load.py         # load.py 单元测试
-data/raw/                  # 采集产出(JSONL + errors.log,gitignore)
-godot.db                   # SQLite 输出(gitignore)
-docs/superpowers/specs/    # 设计文档
-docs/superpowers/plans/    # 实现计划
+data/raw/*.jsonl           # 采集产出:5 个 topic + manual.jsonl(手动补充)
+godot.db                   # SQLite 输出(已入库)
+godot.db.meta.md           # godot.db 数据字典 / 内容说明
+export_csv.py              # godot.db → godot_repos.csv(含 category、独立游戏开发指数)
+godot_repos.csv            # 扁平数据表(utf-8-sig),供 notebook 读取
+build_notebook.py          # godot_repos.csv → 渲染 notebook(纯 HTML、无代码)
+godot_repos_matrix.ipynb   # 颜色矩阵 + 排行榜 + 按类型分类对比(GitHub 在线可渲染)
+visual_style_画面风格参考/  # 画面 / 美术风格参考资料目录
+docs/superpowers/specs/    # 原始设计文档(自动采集管线)
+docs/superpowers/plans/    # 原始实现计划
 ```
 
 ## 重跑与限制
@@ -133,7 +139,7 @@ docs/superpowers/plans/    # 实现计划
 
 ## 生态导览(按领域分类)
 
-下表来自本仓库 `godot.db`,覆盖 `godot-engine`、`godot4`、`godot`、`godot-addon`、`gdscript` 五个 topic 中 **star ≥ 1000 且最近 3 个月有推送** 的仓库,跨 topic 去重后共 51 个。这里按"插件 / 工具链的实际用途"而非原始 topic 重新归类,方便按领域找工具;每个领域内按 star 降序。引擎本体 `godotengine/godot` 不是插件 / 工具,已从导览中略去,故下列 **50 个**。
+下表来自本仓库 `godot.db`,共 **64 个仓库**。其中 51 个来自 5 个 topic(`godot-engine`、`godot4`、`godot`、`godot-addon`、`gdscript`)的自动采集(`star ≥ 1000` 且最近 3 个月有推送);另有 13 个为**手动补充**(在 `godot.db` 里以来源 `manual` 标注):它们多用于 2D / 模拟经营 / 手感 / 特效,虽未达自动采集门槛(star 偏低、无 topic 标签、或不在活跃窗口),但实用价值高,故单独纳入。按"插件 / 工具链的实际用途"归类,每个领域内按 star 降序。引擎本体 `godotengine/godot` 不是插件 / 工具,已从导览中略去,故下列 **63 个**。手动补充项在「独特领先性」列以 `[手动补充]` 标注。
 
 ### 发行版
 
@@ -165,6 +171,7 @@ docs/superpowers/plans/    # 实现计划
 |---|---|---|---|---|
 | [dialogic-godot/dialogic](https://github.com/dialogic-godot/dialogic) | 5726 | GDScript | 对话、视觉小说、角色管理一体化插件 | 可视化时间轴编辑器 + 角色/立绘/分支一体,叙事插件里功能最全 |
 | [nathanhoad/godot_dialogue_manager](https://github.com/nathanhoad/godot_dialogue_manager) | 3654 | GDScript | 面向非线性剧情的强大对话系统 | 用类脚本纯文本写非线性对话、可内嵌表达式,对程序员最友好、最轻量 |
+| [mhgolkar/Arrow](https://github.com/mhgolkar/Arrow) | 1307 | GDScript | 节点式游戏叙事 / 互动小说设计工具 | [手动补充] 可视化节点流程做分支叙事,独立编辑器,适合互动小说 / 文字冒险 |
 
 ### 网络与多人
 
@@ -183,6 +190,7 @@ docs/superpowers/plans/    # 实现计划
 | [gdquest-demos/godot-shaders](https://github.com/gdquest-demos/godot-shaders) | 4008 | GDShader | 大量免费开源的 2D/3D 着色器库,含可玩示例 | 最大的免费 Godot 着色器库,每个都带可玩 demo,即拿即用 |
 | [MewPurPur/GodSVG](https://github.com/MewPurPur/GodSVG) | 2537 | GDScript | 跨平台的结构化 SVG 矢量图编辑器 | 罕见地直接编辑 SVG 源码结构而非栅格,矢量精确可控 |
 | [elringus/sprite-dicing](https://github.com/elringus/sprite-dicing) | 1502 | Rust | 跨引擎的精灵无损压缩工具(复用相同区域) | 独门的精灵切块去重算法,无损且跨引擎,显著节省显存 |
+| [viniciusgerevini/godot-aseprite-wizard](https://github.com/viniciusgerevini/godot-aseprite-wizard) | 1314 | GDScript | 把 Aseprite 动画批量导入 Godot(AnimationPlayer / SpriteFrames 等) | [手动补充] 像素动画工作流标杆,Aseprite→Godot 一键同步,省去手切帧 |
 | [gdquest-demos/godot-visual-effects](https://github.com/gdquest-demos/godot-visual-effects) | 1262 | GDScript | 用 Godot 制作的开源视觉特效合集 | GDQuest 出品的成体系 VFX 范例,配套教学课程 |
 
 ### 地形与世界生成
@@ -190,11 +198,14 @@ docs/superpowers/plans/    # 实现计划
 | 仓库 | ★ | 语言 | 简介 | 独特领先性 |
 |---|---|---|---|---|
 | [TokisanGames/Terrain3D](https://github.com/TokisanGames/Terrain3D) | 3988 | C++ | Godot 4 的高性能可编辑地形系统 | C++ + clipmap 实现,Godot 4 性能最强、可做大世界的地形系统 |
+| [HungryProton/scatter](https://github.com/HungryProton/scatter) | 2896 | GDScript | 基于规则的程序化物体散布(草木 / 石头等) | [手动补充] 用规则批量散布并自动避让,关卡美术铺面神器,远胜手动摆放 |
 | [Zylann/godot_heightmap_plugin](https://github.com/Zylann/godot_heightmap_plugin) | 2209 | GDScript | 基于高度图的地形插件(纯 GDScript) | 老牌纯 GDScript 高度图地形,无需编译、开箱跨平台 |
 | [gdquest-demos/godot-4-procedural-generation](https://github.com/gdquest-demos/godot-4-procedural-generation) | 1862 | GDScript | 程序化生成算法与示例合集 | GDQuest 整理的成体系程序生成算法,既能学也能直接复用 |
 | [SirRamEsq/SmartShape2D](https://github.com/SirRamEsq/SmartShape2D) | 1707 | GDScript | 2D 地形 / 形状绘制工具 | 2D 领域少见的样条地形绘制,边缘自动贴图,补 2D 地形空白 |
 | [gaea-godot/gaea](https://github.com/gaea-godot/gaea) | 1592 | GDScript | Godot 4 的程序化生成插件 | 节点式程序生成、2D/3D 通用,可在编辑器内可视化调参 |
 | [TheDuckCow/godot-road-generator](https://github.com/TheDuckCow/godot-road-generator) | 1069 | GDScript | 生成 3D 道路 / 街道并支持车道跟随交通的插件 | 专攻 3D 道路 + 车道跟随交通,这个细分需求几乎独一份 |
+| [Portponky/better-terrain](https://github.com/Portponky/better-terrain) | 737 | GDScript | 更灵活的 2D autotile / 地形绘制插件 | [手动补充] 比内置 TileMapLayer 地形更顺手的 2D autotile 方案,适合农田/道路/墙体 |
+| [Kiamo2/YATI](https://github.com/Kiamo2/YATI) | 287 | GDScript | 把 Tiled(.tmx/.tmj)地图导入 Godot 4 | [手动补充] Tiled 地图导入最全的方案,支持层/对象/碰撞/动画/自定义属性 |
 
 ### 编辑器、开发工具与语言绑定
 
@@ -206,10 +217,13 @@ docs/superpowers/plans/    # 实现计划
 | [GodotSteam/GodotSteam](https://github.com/GodotSteam/GodotSteam) | 3705 | - | 对接 Steam 平台的 Godot 工具生态 | Steam 集成事实标准,覆盖成就/创意工坊/联机/输入等全套 API |
 | [bitwes/Gut](https://github.com/bitwes/Gut) | 2600 | GDScript | Godot 单元测试工具(GUT) | GDScript 单测元老,生态最广、教程最多 |
 | [CraterCrash/godot-orchestrator](https://github.com/CraterCrash/godot-orchestrator) | 1548 | C++ | 可视化脚本编辑器 Orchestrator | 把虚幻式蓝图可视化脚本带进 Godot,对非程序员友好 |
+| [2shady4u/godot-sqlite](https://github.com/2shady4u/godot-sqlite) | 1395 | C++ | Godot 4.x 的 SQLite GDExtension 封装 | [手动补充] 把关系型数据库带进 Godot,适合大数据量/可查询的经营记录与报表 |
 | [godot-gdunit-labs/gdUnit4](https://github.com/godot-gdunit-labs/gdUnit4) | 1117 | GDScript | Godot 4 内嵌单元测试框架,支持 GDScript 与 C# | 唯一同时覆盖 GDScript + C# 的内嵌测试框架,带 mock 与场景测试 |
 | [abarichello/godot-ci](https://github.com/abarichello/godot-ci) | 1088 | Dockerfile | 导出 Godot 游戏的 Docker 镜像,含 CI 部署模板 | 一键 CI 导出镜像 + GitHub/GitLab 模板,直推 Pages / Itch.io |
 | [DmitriySalnikov/godot_debug_draw_3d](https://github.com/DmitriySalnikov/godot_debug_draw_3d) | 1026 | C++ | 绘制 3D 调试图形与 2D 叠加层的插件 | 专做低开销 3D 调试可视化(射线/形状/图表),C++ 实现 |
 | [Maran23/script-ide](https://github.com/Maran23/script-ide) | 1009 | GDScript | 把脚本界面改造成 IDE 体验的插件(多标签 / 大纲 / 快速跳转) | 把内置脚本面板升级为 IDE 体验,编码效率细节体验领先 |
+| [don-tnowe/godot-resources-as-sheets-plugin](https://github.com/don-tnowe/godot-resources-as-sheets-plugin) | 1008 | GDScript | 像表格一样批量编辑 Godot Resources,支持 CSV | [手动补充] Resource 批量表格化编辑 + CSV 工作流,平衡数值 / 配置表必备 |
+| [rsubtil/controller_icons](https://github.com/rsubtil/controller_icons) | 419 | GDScript | 手柄 / 键鼠按键图标,按输入设备自动切换 | [手动补充] 主流手柄 + 键鼠图标库,自动跟随当前输入设备切换提示 |
 
 ### 框架与游戏系统
 
@@ -217,8 +231,13 @@ docs/superpowers/plans/    # 实现计划
 |---|---|---|---|---|
 | [liangxiegame/QFramework](https://github.com/liangxiegame/QFramework) | 5329 | C# | Godot / Unity 通用的系统设计架构框架 | 跨 Godot/Unity 的成体系架构方法论(配套书籍),中文社区影响力大 |
 | [ramokz/phantom-camera](https://github.com/ramokz/phantom-camera) | 3410 | GDScript | Godot 4 相机插件,灵感来自 Cinemachine | Godot 版 Cinemachine:声明式相机与过渡、2D/3D 通用,相机插件标杆 |
+| [derkork/godot-statecharts](https://github.com/derkork/godot-statecharts) | 1560 | GDScript | 状态图(statechart)扩展,比普通 FSM 更可控 | [手动补充] 层级 / 并行状态图,管理顾客 / 员工 / 建筑 / UI 多状态不易爆炸,经营模拟利器 |
 | [KoBeWi/Metroidvania-System](https://github.com/KoBeWi/Metroidvania-System) | 1510 | GDScript | 制作银河恶魔城类游戏的通用框架 | 专攻银河恶魔城的地图/小地图/存档,细分品类唯一成熟方案 |
 | [bitbrain/pandora](https://github.com/bitbrain/pandora) | 1059 | GDScript | RPG 数据管理插件:物品、背包、技能、怪物、任务、NPC | 编辑器内可视化的 RPG 数据建模,数据驱动、面向内容创作者 |
+| [peter-kish/gloot](https://github.com/peter-kish/gloot) | 928 | GDScript | 通用库存系统(掉落 / 战利品 / 容器) | [手动补充] 高度通用、可自由拼装的库存框架 |
+| [expressobits/inventory-system](https://github.com/expressobits/inventory-system) | 724 | C++ | 模块化库存系统,逻辑与 UI 分离,兼容多人 | [手动补充] 物品用 Resource、逻辑/UI 解耦、支持多人同步的成品库存模块 |
+| [Kelpekk/Juicee](https://github.com/Kelpekk/Juicee) | 40 | GDScript | 90 种 game-feel 手感效果,带可视化图编辑器 | [手动补充] 屏幕震动/hit-stop/伤害数字/弹簧等手感效果集大成,可视化编辑 |
+| [neohex-interactive/sparkelite](https://github.com/neohex-interactive/sparkelite) | 9 | GDScript | 轻量 game-feel 反馈序列,一个 play() 触发 | [手动补充] 把震屏/顿帧/闪白/缩放打击堆成序列,一键触发,极简 |
 
 ### 学习资源、模板与示例项目
 
