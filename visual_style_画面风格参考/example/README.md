@@ -1,11 +1,19 @@
-# example — 画风示例
+# example — 画风示例索引
 
-各 2D 画风的参考示例图 / 截图存放处,与上级 [`../README.md`](../README.md) 的 15 种画风对应。
+各 2D 画风的参考示例图 / 截图,与上级 [`../README.md`](../README.md) 的 20 种画风对应。
+每个画风一个子目录(`<画风>/`),内含示例图 + `README.md`(风格还原点 + 参考 Prompt)。
 
-## 组织建议(待填充)
+## 目录索引
 
-- 按画风建子目录,如 `pixel-art/`、`cozy-cute/`、`dark-hand-drawn/` …
-- 每个画风放:代表作截图、AI 生成的概念图、调色板、参考链接
-- 可配 `notes.md` 记录该示例用的 Prompt 与来源
+| 画风 | 对应总览 # | 示例 | 预览 |
+|---|---|---|---|
+| [暗黑高对比手绘风 / Dark Hand-drawn](./dark-hand-drawn/) | #5 | 瘟疫医生提灯 | <img src="./dark-hand-drawn/plague-doctor.png" width="160"> |
 
-> 占位中。告诉我你想先放哪些画风的示例、以截图还是 AI 生成图为主,我来搭好结构。
+> 待补充:像素风、可爱治愈风、高精度像素风、复古街机风 等(见上级 README 的 20 种画风)。
+
+## 新增示例的约定
+
+1. 建子目录:`example/<画风-英文-kebab>/`(如 `pixel-art/`、`cozy-cute/`)
+2. 放示例图(`.png` / `.jpg`),文件名用内容描述(如 `farm-scene.png`)
+3. 写该目录的 `README.md`:嵌入图 + 图注 + 风格还原点 + 参考 Prompt(正向 / Negative)
+4. 回到本文件,在上方「目录索引」表加一行(含 width=160 的缩略预览)
