@@ -13,6 +13,7 @@ godot 无 0-10 主观评分,评分列(stars / forks / stars_per_month)先按列
 min-max 归一到 0-10 再代入色阶公式。
 """
 import csv
+import bisect
 import nbformat as nbf
 
 # ── 读取 CSV(utf-8-sig)──────────────────────────────────────
@@ -28,8 +29,21 @@ for r in rows:
 TOTAL = len(rows)
 SCORE_COLS = ["stars", "forks", "stars_per_month"]   # 评分列:红(低)→黄→绿(高)
 VAR_COLS = ["open_issues"]                            # 方差/风险列:绿(低)→红(高),反向
-BOUNDS = {c: (min(r[c] for r in rows), max(r[c] for r in rows))
-          for c in SCORE_COLS + VAR_COLS}
+
+# 指标偏态严重(如 stars 跨 1e3~1e5),直接 min-max 会把多数值挤到一端、颜色分块。
+# 改用按排名分位(percentile)归一,让色阶沿排序行平滑铺开。
+_SORTED = {c: sorted(r[c] for r in rows) for c in SCORE_COLS + VAR_COLS}
+
+
+def _percentile(col, value):
+    vals = _SORTED[col]
+    n = len(vals)
+    if n <= 1:
+        return 0.0
+    lo = bisect.bisect_left(vals, value)
+    hi = bisect.bisect_right(vals, value)
+    rank = (lo + hi - 1) / 2          # 并列取平均名次
+    return rank / (n - 1)             # 0..1
 
 
 def score_bg(score):
@@ -45,24 +59,19 @@ def score_bg(score):
 
 
 def variance_bg(v5):
-    """v5 为 0-5(反向):稳定(0-1.5)=绿、中等(1.5-2.5)=黄、分化(2.5-5)=红。"""
-    if v5 < 1.5:
-        r, g, b = 60, 200, 60          # 绿:一致/健康
-    elif v5 < 2.5:
-        r, g, b = 220, 200, 60         # 黄:中等
-    else:
-        r, g, b = 220, 60, 60          # 红:争议大/风险高
-    return f"background-color: rgba({r},{g},{b}, 0.35)"
+    """v5 为 0-5(反向),平滑过渡:低=绿(健康)→黄→高=红(风险)。
+
+    复用评分列的连续色阶曲线,把输入反过来(v5 越大 ≈ 分数越低 = 越红),
+    保证与评分列同一条平滑渐变,不分硬档。"""
+    return score_bg(10 - 2 * v5)
 
 
 def to_score10(col, value):
-    lo, hi = BOUNDS[col]
-    return 0.0 if hi == lo else (value - lo) / (hi - lo) * 10
+    return _percentile(col, value) * 10
 
 
 def to_var5(col, value):
-    lo, hi = BOUNDS[col]
-    return 0.0 if hi == lo else (value - lo) / (hi - lo) * 5
+    return _percentile(col, value) * 5
 
 
 def fmt(col, v):
