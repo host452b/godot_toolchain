@@ -1,8 +1,3 @@
-# 采集产出物 —— 不入库
-/data/raw/*.jsonl
-/data/raw/errors.log
-/godot.db
-
 # Python
 __pycache__/
 *.pyc
