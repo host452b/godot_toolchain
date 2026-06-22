@@ -1,0 +1,16 @@
+﻿序号,中文画风,英文,核心视觉特征,常见视角,适合类型,代表作,Prompt关键词,steam,safe,diff,fit
+1,像素风,Pixel Art,低分辨率网格、清晰轮廓、有限色板、强符号化,横版/俯视/等距,平台跳跃/生存建造/RPG/roguelike,Terraria、Stardew Valley、Celeste、Vampire Survivors,"pixel art, limited palette, crisp sprites",95,85,50,90
+2,高精度像素风,High-detail Pixel Art,大尺寸像素角色、复杂材质、粒子、动态光影,横版/等距/俯视,metroidvania/动作 roguelite/ARPG,Dead Cells、Eastward、Noita,"detailed pixel art, dynamic lighting, rich tileset",88,85,85,65
+3,复古街机风,Retro Arcade,霓虹、CRT 扫描线、机台感、高对比 UI,俯视/横版/固定屏,弹幕/清版/街机动作/幸存者类,Vampire Survivors、Brotato、Downwell,"retro arcade, CRT, neon score UI",72,70,35,85
+4,手绘卡通风,Hand-drawn Cartoon,手绘轮廓、夸张形体、柔和变形动画、可读性强,横版/俯视/等距,roguelike/动作冒险/平台/解谜,Cuphead、Cult of the Lamb、Don't Starve,"hand-drawn cartoon, expressive silhouettes",78,85,85,50
+5,暗黑手绘风,Dark Hand-drawn,墨线、冷色、局部高亮、阴影压迫、怪诞生态,横版/侧视/2.5D,metroidvania/魂味动作/探索冒险,Hollow Knight、Darkest Dungeon,"dark hand-drawn, moody ink linework",82,85,85,55
+6,哥特童话风,Gothic Fairytale,童话比例 + 哥特建筑、尖拱、黑白灰、病态优雅,横版/固定镜头,解谜/叙事/metroidvania/恐怖童话,Fran Bow、Little Nightmares(2.5D),"gothic fairytale, eerie storybook",50,50,85,40
+7,日系二次元风,Anime Style,大眼角色、清洁线稿、赛璐璐上色、角色吸引力强,横版/俯视/视觉小说式,RPG/galgame/动作/卡牌/养成,Omori、Muse Dash,"anime style, cel shading, clean lineart",65,70,65,45
+8,可爱治愈风,Cozy Cute,圆润角色、低威胁、暖色、柔软材质、生活感 UI,俯视/等距/横版,farming sim/收集/经营/轻度冒险,Stardew Valley、A Short Hike、Spiritfarer,"cozy cute, warm palette, wholesome",85,85,50,75
+9,美式漫画风,Comic Book Style,粗描边、网点、速度线、分镜式构图、夸张表情,横版/俯视/卡牌桌面,动作/卡牌/叙事/格斗,Darkest Dungeon、Monster Prom,"comic book, bold ink, halftone",55,50,65,50
+10,极简几何风,Minimalist Geometric,基础几何体、低细节、高动效反馈、UI 一体化,俯视/固定屏/抽象空间,解谜/策略/节奏/街机,Mini Metro、Thomas Was Alone、140,"minimalist geometric, clean UI, abstract",58,50,20,80
+11,剪纸 / 皮影风,Paper-cut / Shadow Puppet,分层纸片、侧影、材质边缘、舞台感,横版/固定镜头,解谜/叙事/平台/童话冒险,Papetura、The Procession to Calvary(局部),"paper cutout, layered diorama, shadow puppet",42,50,85,35
+12,水彩绘本风,Watercolor Storybook,水彩晕染、纸纹、低对比、绘本构图,横版/叙事镜头/固定场景,叙事/解谜/轻冒险/亲子向,Gris、Dordogne、Child of Light(参考),"watercolor storybook, paper texture",48,50,85,35
+13,低饱和叙事风,Muted Narrative Art,灰调、低饱和、写实简化、情绪留白,横版/等距/固定镜头,叙事/冒险/解谜/社会议题,Night in the Woods、Oxenfree、Norco,"muted narrative art, subdued palette",56,50,50,60
+14,霓虹赛博 2D 风,Neon Cyberpunk 2D,黑底霓虹、赛博 UI、强反射、紫青色调,横版/俯视/等距,动作/潜入/射击/解谜,Katana ZERO、ANNO: Mutationem(2.5D),"neon cyberpunk, magenta cyan lighting",54,50,85,45
+15,黑白高对比风,Monochrome High Contrast,黑白剪影、硬边阴影、负空间、强构图,横版/固定镜头/解谜视角,解谜/恐怖/叙事/平台,Limbo、Return of the Obra Dinn、Minit,"monochrome, high contrast, silhouette",57,50,50,65
