@@ -88,10 +88,9 @@ echo "活跃截止日(pushed >=): $CUTOFF"
 for topic in "${TOPICS[@]}"; do
   out="$OUT_DIR/${topic}.jsonl"
   echo "==> 采集 topic: $topic"
-  if gh search repos \
+  if gh search repos "pushed:>=$CUTOFF" \
        --topic "$topic" \
        --stars '>=1000' \
-       --pushed ">=$CUTOFF" \
        --sort stars --order desc \
        --limit 1000 \
        --json "$FIELDS" \
@@ -123,7 +122,7 @@ Expected: 无输出(语法正确),退出码 0。
 
 Run:
 ```bash
-gh search repos --topic gdscript --stars '>=1000' --pushed ">=$(date -v-3m +%Y-%m-%d)" --sort stars --order desc --limit 5 --json fullName,url,stargazersCount | jq -c '.[]'
+gh search repos "pushed:>=$(date -v-3m +%Y-%m-%d)" --topic gdscript --stars '>=1000' --sort stars --order desc --limit 5 --json fullName,url,stargazersCount | jq -c '.[]'
 ```
 Expected: 输出若干行 JSON,每行含 `fullName`/`url`/`stargazersCount`。若报 `jq: command not found`,先 `brew install jq`。
 
