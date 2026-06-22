@@ -8,8 +8,10 @@
 | 画风 | 对应总览 # | 示例 | 预览 |
 |---|---|---|---|
 | [暗黑高对比手绘风 / Dark Hand-drawn](./dark-hand-drawn/) | #5 | 瘟疫医生提灯 | <img src="./dark-hand-drawn/plague-doctor.png" width="160"> |
+| [怪诞反差萌卡通风 / Grotesque Occult Cartoon](./grotesque-cartoon/) | #4 | 邪教绵羊(羔羊教派式) | <img src="./grotesque-cartoon/cult-sheep.png" width="160"> |
+| [现代霓虹高精像素风 / Neon Pixel Art](./neon-pixel/) | #2 × #14 | 网络武士(图待补) | — |
 
-> 待补充:像素风、可爱治愈风、高精度像素风、复古街机风 等(见上级 README 的 20 种画风)。
+> 待补充:像素风、可爱治愈风、复古街机风 等(见上级 README 的 20 种画风)。
 
 ## 新增示例的约定
 
