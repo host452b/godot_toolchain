@@ -1,10 +1,15 @@
-"""生成 godot_repos_matrix.ipynb:从 godot.db 读全部仓库,渲染一张完整数据表,红绿色阶。
+"""生成 godot_repos_matrix.ipynb(nbformat 4)。
 
-形式参考 best-of-everything.consensus/shanghai-housing/shanghai_communities.ipynb:
-- 一张完整数据表(全部记录,不分页/不截断)
-- 数值列红绿色阶(RdYlGn:低=红、高=绿)
+渲染规范(适配自 best-of-everything.consensus/shanghai-housing):
+- 读取 CSV(utf-8-sig 编码)
+- 完整数据表分页(50 行/页),字号 8-9px,nowrap,标题 <h4>第X-Y/总数</h4>
+- 评分列注入红→黄→绿色阶(higher 越绿);价格类数字列右对齐不着色;名称列加粗
+- 排行榜:字号 11px,Top 15,标题 <h3>
 - 着色用每个 <td> 的 inline style="background-color:rgba(...)",不用 <style> 块,
   这样 GitHub 在线查看 .ipynb 时颜色不会被剥掉。
+
+godot 数据无 0-10 主观评分,故评分列(stars / forks / stars_per_month)先按列
+min-max 归一到 0-10,再代入色阶公式。
 """
 import nbformat as nbf
 
@@ -12,88 +17,124 @@ nb = nbf.v4.new_notebook()
 cells = []
 
 cells.append(nbf.v4.new_markdown_cell(
-    "# Godot 生态仓库 · 完整数据表(红绿色阶)\n"
+    "# Godot 生态仓库 · 完整数据表 + 排行榜\n"
     "\n"
-    "数据来自本仓库 `godot.db`(5 个 topic、`star ≥ 1000`、最近 3 个月有推送,去重后 **51 个仓库**,全部列出)。\n"
+    "数据来自 `godot_repos.csv`(由 `export_csv.py` 从 `godot.db` 导出,utf-8-sig)。"
+    "覆盖 5 个 topic、`star ≥ 1000`、最近 3 个月有推送,去重后 51 个仓库。\n"
     "\n"
-    "维度:**full_name / url / stars / forks / open_issues / 月均新增 star**。\n"
-    "\n"
-    "> 月均新增 star = `stars ÷ 从创建到最后更新的月数`,衡量仓库历史上的平均涨星速度。\n"
-    "> 数值列按列做**红绿色阶**(RdYlGn:同列内越低越红、越高越绿)。\n"
-    "> 着色用每个单元格的 inline 样式,**GitHub 在线查看即可看到颜色**。"
+    "**色阶规则**:评分列(`stars` / `forks` / `月均涨星`)按列归一到 0–10 后,"
+    "红(低)→黄→绿(高);`open_issues` 视为中性计数,右对齐不着色;`full_name` 加粗。\n"
+    "着色用单元格 inline 样式,**GitHub 在线即可见颜色**。"
 ))
 
-# 单元1:加载 + 计算
+# ── 单元1:读取 CSV + 着色函数 ───────────────────────────────
 cells.append(nbf.v4.new_code_cell(
-    "import sqlite3\n"
     "import pandas as pd\n"
-    "import matplotlib\n"
-    "from IPython.display import HTML\n"
+    "from IPython.display import HTML, display\n"
     "\n"
-    "conn = sqlite3.connect('godot.db')\n"
-    "df = pd.read_sql_query(\n"
-    "    'SELECT full_name, url, stars, forks, open_issues, created_at, updated_at FROM repos',\n"
-    "    conn,\n"
-    ")\n"
-    "conn.close()\n"
+    "df = pd.read_csv('godot_repos.csv', encoding='utf-8-sig')\n"
+    "TOTAL = len(df)\n"
     "\n"
-    "# 月均新增 star = stars / 从创建到最后更新的月数(至少按 1 个月计,避免除零)\n"
-    "created = pd.to_datetime(df['created_at'], utc=True)\n"
-    "updated = pd.to_datetime(df['updated_at'], utc=True)\n"
-    "active_months = ((updated - created).dt.days / 30.44).clip(lower=1.0)\n"
-    "df['stars_per_month'] = (df['stars'] / active_months).round(1)\n"
-    "df = (df.drop(columns=['created_at', 'updated_at'])\n"
-    "        .sort_values('stars', ascending=False)\n"
-    "        .reset_index(drop=True))\n"
-    "print(f'{len(df)} 个仓库')\n"
-    "df.head()"
+    "# 评分列(higher 越好,着红→黄→绿);价格类数字列(右对齐不着色);名称/链接列\n"
+    "SCORE_COLS = ['stars', 'forks', 'stars_per_month']\n"
+    "NUM_PLAIN  = ['open_issues']        # 中性计数,右对齐不着色\n"
+    "BOUNDS = {c: (df[c].min(), df[c].max()) for c in SCORE_COLS}\n"
+    "\n"
+    "def score_bg(score):\n"
+    "    \"\"\"score 为 0-10,返回红→黄→绿的 rgba 背景(套用规范公式)。\"\"\"\n"
+    "    ratio = max(0.0, min(1.0, (score - 3) / 7))\n"
+    "    if ratio < 0.5:\n"
+    "        r, g, b = 220, int(60 + ratio * 2 * 180), 60          # 红→黄\n"
+    "    else:\n"
+    "        r = int(220 - (ratio - 0.5) * 2 * 180)\n"
+    "        g = 200\n"
+    "        b = int(60 + (ratio - 0.5) * 2 * 40)                  # 黄→绿\n"
+    "    return f'background-color: rgba({r},{g},{b}, 0.35)'\n"
+    "\n"
+    "def to_score10(col, value):\n"
+    "    \"\"\"把原始指标按列 min-max 归一到 0-10。\"\"\"\n"
+    "    lo, hi = BOUNDS[col]\n"
+    "    return 0.0 if hi == lo else (value - lo) / (hi - lo) * 10\n"
+    "print(f'{TOTAL} 行已载入')"
 ))
 
-# 单元2:红绿色阶 + inline-style HTML 渲染
+# ── 单元2:完整数据表(分页 50 行/页,8-9px)──────────────────
 cells.append(nbf.v4.new_code_cell(
-    "# 数值列统一红绿色阶(RdYlGn):同列内归一化,低=红、高=绿\n"
-    "NUM_COLS = ['stars', 'forks', 'open_issues', 'stars_per_month']\n"
-    "CMAP = matplotlib.colormaps['RdYlGn']\n"
-    "ALPHA = 0.55\n"
+    "PAGE = 50    # 每页行数(规范 50-80)\n"
+    "DISPLAY_COLS = ['full_name', 'url', 'language', 'stars', 'forks',\n"
+    "                'open_issues', 'stars_per_month']\n"
     "\n"
-    "def _cell_bg(value, vmin, vmax):\n"
-    "    t = 0.0 if vmax == vmin else (value - vmin) / (vmax - vmin)\n"
-    "    r, g, b, _ = CMAP(t)\n"
-    "    return f'rgba({int(r*255)},{int(g*255)},{int(b*255)},{ALPHA})'\n"
-    "\n"
-    "def render_table(frame, caption):\n"
-    "    bounds = {c: (frame[c].min(), frame[c].max()) for c in NUM_COLS if c in frame.columns}\n"
-    "    head_style = ('background-color:#222;color:#fff;padding:6px 10px;'\n"
-    "                  'text-align:left;position:sticky;top:0')\n"
-    "    html = [f'<table style=\"border-collapse:collapse;font-family:system-ui,Arial,sans-serif;'\n"
-    "            f'font-size:13px\"><caption style=\"font-size:16px;font-weight:bold;'\n"
-    "            f'padding:8px;text-align:left\">{caption}</caption>']\n"
-    "    html.append('<tr><th style=\"' + head_style + '\">#</th>' + ''.join(\n"
-    "        f'<th style=\"{head_style}\">{col}</th>' for col in frame.columns) + '</tr>')\n"
-    "    for rank, (_, row) in enumerate(frame.iterrows(), start=1):\n"
-    "        base = 'padding:4px 10px;border-bottom:1px solid #eee'\n"
-    "        cells_html = [f'<td style=\"{base};color:#888\">{rank}</td>']\n"
-    "        for col in frame.columns:\n"
-    "            v = row[col]\n"
-    "            if col == 'full_name':\n"
-    "                cells_html.append(f'<td style=\"{base};font-weight:bold\">{v}</td>')\n"
-    "            elif col == 'url':\n"
-    "                cells_html.append(\n"
-    "                    f'<td style=\"{base}\"><a href=\"{v}\" target=\"_blank\">link</a></td>')\n"
-    "            elif col in NUM_COLS:\n"
-    "                vmin, vmax = bounds[col]\n"
-    "                bg = _cell_bg(v, vmin, vmax)\n"
-    "                txt = f'{v:,.1f}' if col == 'stars_per_month' else f'{int(v):,}'\n"
-    "                cells_html.append(\n"
-    "                    f'<td style=\"{base};background-color:{bg};text-align:right\">{txt}</td>')\n"
+    "def render_full_page(frame, start, end, total):\n"
+    "    th = ('background-color:#222;color:#fff;padding:3px 6px;'\n"
+    "          'white-space:nowrap;text-align:left')\n"
+    "    td = 'padding:2px 6px;white-space:nowrap;border-bottom:1px solid #eee'\n"
+    "    out = [f'<h4>第 {start}-{end} / {total}</h4>',\n"
+    "           '<table style=\"border-collapse:collapse;font-size:9px;'\n"
+    "           'font-family:system-ui,Arial,sans-serif\">']\n"
+    "    out.append('<tr><th style=\"' + th + '\">#</th>' +\n"
+    "               ''.join(f'<th style=\"{th}\">{c}</th>' for c in DISPLAY_COLS) + '</tr>')\n"
+    "    for rank, (_, row) in enumerate(frame.iterrows(), start=start):\n"
+    "        cells = [f'<td style=\"{td};color:#888\">{rank}</td>']\n"
+    "        for c in DISPLAY_COLS:\n"
+    "            v = row[c]\n"
+    "            if c == 'full_name':\n"
+    "                cells.append(f'<td style=\"{td}\"><b>{v}</b></td>')\n"
+    "            elif c == 'url':\n"
+    "                cells.append(f'<td style=\"{td}\"><a href=\"{v}\">link</a></td>')\n"
+    "            elif c in SCORE_COLS:\n"
+    "                bg = score_bg(to_score10(c, v))\n"
+    "                txt = f'{v:,.1f}' if c == 'stars_per_month' else f'{int(v):,}'\n"
+    "                cells.append(f'<td style=\"{td};{bg};text-align:right\">{txt}</td>')\n"
+    "            elif c in NUM_PLAIN:\n"
+    "                cells.append(f'<td style=\"{td};text-align:right\">{int(v):,}</td>')\n"
     "            else:\n"
-    "                cells_html.append(f'<td style=\"{base}\">{v}</td>')\n"
-    "        html.append('<tr>' + ''.join(cells_html) + '</tr>')\n"
-    "    html.append('</table>')\n"
-    "    return HTML('\\n'.join(html))\n"
+    "                cells.append(f'<td style=\"{td}\">{v}</td>')\n"
+    "        out.append('<tr>' + ''.join(cells) + '</tr>')\n"
+    "    out.append('</table>')\n"
+    "    return '\\n'.join(out)\n"
     "\n"
-    "# 完整数据表:全部 51 个仓库,按 stars 降序\n"
-    "render_table(df, f'Godot 生态完整数据表 — 共 {len(df)} 个仓库,数值列红绿色阶')"
+    "html_pages = []\n"
+    "for s in range(0, TOTAL, PAGE):\n"
+    "    page = df.iloc[s:s + PAGE]\n"
+    "    html_pages.append(render_full_page(page, s + 1, min(s + PAGE, TOTAL), TOTAL))\n"
+    "display(HTML('<hr>'.join(html_pages)))"
+))
+
+# ── 单元3:排行榜(11px,Top 15)────────────────────────────
+cells.append(nbf.v4.new_code_cell(
+    "def render_ranking(frame, title):\n"
+    "    th = ('background-color:#222;color:#fff;padding:6px 10px;'\n"
+    "          'white-space:nowrap;text-align:left')\n"
+    "    td = 'padding:4px 10px;white-space:nowrap;border-bottom:1px solid #eee'\n"
+    "    cols = ['full_name', 'language', 'stars', 'stars_per_month', 'forks']\n"
+    "    out = [f'<h3>{title}</h3>',\n"
+    "           '<table style=\"border-collapse:collapse;font-size:11px;'\n"
+    "           'font-family:system-ui,Arial,sans-serif\">']\n"
+    "    out.append('<tr><th style=\"' + th + '\">#</th>' +\n"
+    "               ''.join(f'<th style=\"{th}\">{c}</th>' for c in cols) + '</tr>')\n"
+    "    for rank, (_, row) in enumerate(frame.iterrows(), start=1):\n"
+    "        cells = [f'<td style=\"{td};color:#888\">{rank}</td>']\n"
+    "        for c in cols:\n"
+    "            v = row[c]\n"
+    "            if c == 'full_name':\n"
+    "                cells.append(f'<td style=\"{td}\"><b>{v}</b></td>')\n"
+    "            elif c in SCORE_COLS:\n"
+    "                bg = score_bg(to_score10(c, v))\n"
+    "                txt = f'{v:,.1f}' if c == 'stars_per_month' else f'{int(v):,}'\n"
+    "                cells.append(f'<td style=\"{td};{bg};text-align:right\">{txt}</td>')\n"
+    "            else:\n"
+    "                cells.append(f'<td style=\"{td}\">{v}</td>')\n"
+    "        out.append('<tr>' + ''.join(cells) + '</tr>')\n"
+    "    out.append('</table>')\n"
+    "    return HTML('\\n'.join(out))\n"
+    "\n"
+    "top_stars = df.sort_values('stars', ascending=False).head(15)\n"
+    "render_ranking(top_stars, '★ Stars 排行 Top 15')"
+))
+
+cells.append(nbf.v4.new_code_cell(
+    "top_growth = df.sort_values('stars_per_month', ascending=False).head(15)\n"
+    "render_ranking(top_growth, '📈 月均涨星 排行 Top 15')"
 ))
 
 nb['cells'] = cells
