@@ -133,13 +133,12 @@ docs/superpowers/plans/    # 实现计划
 
 ## 生态导览(按领域分类)
 
-下表来自本仓库 `godot.db`,覆盖 `godot-engine`、`godot4`、`godot`、`godot-addon`、`gdscript` 五个 topic 中 **star ≥ 1000 且最近 3 个月有推送** 的仓库,跨 topic 去重后共 **51 个**。这里按"插件 / 工具链的实际用途"而非原始 topic 重新归类,方便按领域找工具;每个领域内按 star 降序。
+下表来自本仓库 `godot.db`,覆盖 `godot-engine`、`godot4`、`godot`、`godot-addon`、`gdscript` 五个 topic 中 **star ≥ 1000 且最近 3 个月有推送** 的仓库,跨 topic 去重后共 51 个。这里按"插件 / 工具链的实际用途"而非原始 topic 重新归类,方便按领域找工具;每个领域内按 star 降序。引擎本体 `godotengine/godot` 不是插件 / 工具,已从导览中略去,故下列 **50 个**。
 
-### 引擎与发行版
+### 发行版
 
 | 仓库 | ★ | 语言 | 简介 |
 |---|---|---|---|
-| [godotengine/godot](https://github.com/godotengine/godot) | 112899 | C++ | Godot 引擎本体,跨平台 2D/3D 游戏引擎 |
 | [Redot-Engine/redot-engine](https://github.com/Redot-Engine/redot-engine) | 5880 | C++ | Godot 的社区分叉发行版 Redot |
 
 ### AI 辅助开发与 LLM 集成
