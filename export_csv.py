@@ -53,6 +53,35 @@ CATEGORIES = {
 }
 _REPO_TO_CAT = {repo: cat for cat, repos in CATEGORIES.items() for repo in repos}
 
+# 独立游戏开发指数(0-100):独立开发者对该工具的"刚需/依赖程度"主观评估。
+# 高分=几乎人人要用的核心(引擎/文档/对话/像素画/相机/上架);
+# 低分=企业级/研究向/小众工具,独立开发很少直接依赖。
+INDIE_INDEX = {
+    "godotengine/godot": 100, "godotengine/godot-docs": 95, "godotengine/awesome-godot": 85,
+    "Redot-Engine/redot-engine": 30,
+    "Donchitos/Claude-Code-Game-Studios": 45, "htdt/godogen": 40,
+    "KsanaDock/Microverse": 20, "Coding-Solo/godot-mcp": 50, "nobodywho-ooo/nobodywho": 45,
+    "bitbrain/beehave": 70, "limbonaut/limboai": 72, "edbeeching/godot_rl_agents": 35,
+    "dialogic-godot/dialogic": 88, "nathanhoad/godot_dialogue_manager": 85,
+    "heroiclabs/nakama": 50, "zfoo-project/zfoo": 25, "foxssake/netfox": 55,
+    "Orama-Interactive/Pixelorama": 80, "RodZill4/material-maker": 70,
+    "gdquest-demos/godot-shaders": 78, "MewPurPur/GodSVG": 45,
+    "elringus/sprite-dicing": 50, "gdquest-demos/godot-visual-effects": 65,
+    "TokisanGames/Terrain3D": 65, "Zylann/godot_heightmap_plugin": 55,
+    "gdquest-demos/godot-4-procedural-generation": 60, "SirRamEsq/SmartShape2D": 62,
+    "gaea-godot/gaea": 58, "TheDuckCow/godot-road-generator": 35,
+    "godot-rust/gdext": 45, "focus-creative-games/luban": 40, "MattParkerDev/SharpIDE": 35,
+    "GodotSteam/GodotSteam": 75, "bitwes/Gut": 68, "CraterCrash/godot-orchestrator": 60,
+    "godot-gdunit-labs/gdUnit4": 65, "abarichello/godot-ci": 60,
+    "DmitriySalnikov/godot_debug_draw_3d": 55, "Maran23/script-ide": 58,
+    "liangxiegame/QFramework": 50, "ramokz/phantom-camera": 80,
+    "KoBeWi/Metroidvania-System": 55, "bitbrain/pandora": 65,
+    "0xFA11/MultiplayerNetworkingResources": 45, "Revolutionary-Games/Thrive": 25,
+    "gdquest-demos/godot-open-rpg": 70, "GDQuest/learn-gdscript": 80,
+    "nezvers/Godot-GameTemplate": 65, "Maaack/Godot-Game-Template": 70,
+    "drwhut/tabletop-club": 25, "gdquest-demos/godot-2d-space-game": 55,
+}
+
 conn = sqlite3.connect("godot.db")
 df = pd.read_sql_query(
     "SELECT full_name, url, language, stars, forks, open_issues, "
@@ -71,10 +100,15 @@ df = (df.drop(columns=["created_at", "updated_at"])
         .reset_index(drop=True))
 df["language"] = df["language"].fillna("-")
 df["category"] = df["full_name"].map(_REPO_TO_CAT)
+df["indie_game_index"] = df["full_name"].map(INDIE_INDEX)
 
 missing = df[df["category"].isna()]["full_name"].tolist()
 if missing:
     raise SystemExit(f"未分类的仓库,请补进 CATEGORIES: {missing}")
+missing_idx = df[df["indie_game_index"].isna()]["full_name"].tolist()
+if missing_idx:
+    raise SystemExit(f"缺独立游戏开发指数,请补进 INDIE_INDEX: {missing_idx}")
+df["indie_game_index"] = df["indie_game_index"].astype(int)
 
 df.to_csv("godot_repos.csv", index=False, encoding="utf-8-sig")
 print(f"wrote godot_repos.csv ({len(df)} rows, {df['category'].nunique()} 个类别)")

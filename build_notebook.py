@@ -20,14 +20,15 @@ import nbformat as nbf
 with open("godot_repos.csv", encoding="utf-8-sig", newline="") as f:
     rows = list(csv.DictReader(f))
 
-INT_COLS = ["stars", "forks", "open_issues"]
+INT_COLS = ["stars", "forks", "open_issues", "indie_game_index"]
 for r in rows:
     for c in INT_COLS:
         r[c] = int(r[c])
     r["stars_per_month"] = float(r["stars_per_month"])
 
 TOTAL = len(rows)
-SCORE_COLS = ["stars", "forks", "stars_per_month"]   # 评分列:红(低)→黄→绿(高)
+SCORE_COLS = ["stars", "forks", "stars_per_month"]   # 评分列:红(低)→黄→绿(高),按分位归一
+ABS100_COLS = ["indie_game_index"]                   # 0-100 绝对评分:红(低)→黄→绿(高)
 VAR_COLS = ["open_issues"]                            # 方差/风险列:绿(低)→红(高),反向
 
 # 指标偏态严重(如 stars 跨 1e3~1e5),直接 min-max 会把多数值挤到一端、颜色分块。
@@ -80,7 +81,7 @@ def fmt(col, v):
 
 # ── 完整数据表(分页,9px)────────────────────────────────────
 FULL_COLS = ["full_name", "category", "url", "language", "stars", "forks",
-             "open_issues", "stars_per_month"]
+             "open_issues", "stars_per_month", "indie_game_index"]
 
 
 def render_full_page(page_rows, start, end):
@@ -106,6 +107,9 @@ def render_full_page(page_rows, start, end):
             elif c in VAR_COLS:
                 bg = variance_bg(to_var5(c, v))
                 cells.append(f'<td style="{td};{bg};text-align:right">{int(v):,}</td>')
+            elif c in ABS100_COLS:
+                bg = score_bg(v / 10)        # 0-100 绝对评分 → 0-10 → 红黄绿
+                cells.append(f'<td style="{td};{bg};text-align:right">{int(v)}</td>')
             else:
                 cells.append(f'<td style="{td}">{v}</td>')
         out.append("<tr>" + "".join(cells) + "</tr>")
@@ -143,7 +147,8 @@ def render_ranking(rank_rows, title):
 
 
 # ── 按类型分类对比(每类一表,<hr> 横线分隔)──────────────────
-CMP_COLS = ["full_name", "language", "stars", "forks", "open_issues", "stars_per_month"]
+CMP_COLS = ["full_name", "language", "stars", "forks", "open_issues",
+            "stars_per_month", "indie_game_index"]
 
 
 def render_category(cat, cat_rows):
@@ -168,6 +173,9 @@ def render_category(cat, cat_rows):
             elif c in VAR_COLS:
                 bg = variance_bg(to_var5(c, v))
                 cells.append(f'<td style="{td};{bg};text-align:right">{int(v):,}</td>')
+            elif c in ABS100_COLS:
+                bg = score_bg(v / 10)
+                cells.append(f'<td style="{td};{bg};text-align:right">{int(v)}</td>')
             else:
                 cells.append(f'<td style="{td}">{v}</td>')
         out.append("<tr>" + "".join(cells) + "</tr>")
@@ -191,6 +199,7 @@ cells.append(nbf.v4.new_markdown_cell(
     f"数据 {TOTAL} 个仓库,来自 `godot_repos.csv`(5 个 topic、`star ≥ 1000`、最近 3 个月有推送)。"
     "**红绿色阶**:评分列(`stars` / `forks` / `月均涨星`)红(低)→黄→绿(高);"
     "`open_issues` 为风险/健康度列,**反向**——少=绿(健康)、多=红(积压风险);"
+    "`indie_game_index`(独立游戏开发指数,0–100,独立开发者刚需程度)按绝对分着色,高=绿;"
     "`full_name` 加粗。下方仅为 HTML 渲染结果(无代码)。"
 ))
 

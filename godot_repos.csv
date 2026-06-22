@@ -1,52 +1,52 @@
-﻿full_name,url,language,stars,forks,open_issues,stars_per_month,category
-godotengine/godot,https://github.com/godotengine/godot,C++,112899,25726,18480,755.1,引擎与发行版
-Donchitos/Claude-Code-Game-Studios,https://github.com/Donchitos/Claude-Code-Game-Studios,Shell,22010,3181,44,5153.7,AI 辅助开发与 LLM 集成
-heroiclabs/nakama,https://github.com/heroiclabs/nakama,Go,12778,1430,124,112.9,网络与多人
-godotengine/awesome-godot,https://github.com/godotengine/awesome-godot,-,10210,549,53,76.0,学习资源、模板与示例项目
-Orama-Interactive/Pixelorama,https://github.com/Orama-Interactive/Pixelorama,GDScript,9771,516,83,119.0,美术与创作工具
-0xFA11/MultiplayerNetworkingResources,https://github.com/0xFA11/MultiplayerNetworkingResources,C,8556,534,2,84.8,学习资源、模板与示例项目
-Redot-Engine/redot-engine,https://github.com/Redot-Engine/redot-engine,C++,5880,306,61,56.4,引擎与发行版
-dialogic-godot/dialogic,https://github.com/dialogic-godot/dialogic,GDScript,5726,335,168,79.0,对话与叙事
-RodZill4/material-maker,https://github.com/RodZill4/material-maker,GDScript,5554,352,311,58.5,美术与创作工具
-godotengine/godot-docs,https://github.com/godotengine/godot-docs,reStructuredText,5430,3686,1077,43.0,学习资源、模板与示例项目
-liangxiegame/QFramework,https://github.com/liangxiegame/QFramework,C#,5329,857,8,42.8,框架与游戏系统
-godot-rust/gdext,https://github.com/godot-rust/gdext,Rust,4904,298,67,103.2,编辑器、开发工具与语言绑定
-focus-creative-games/luban,https://github.com/focus-creative-games/luban,C#,4455,714,1,65.6,编辑器、开发工具与语言绑定
-Coding-Solo/godot-mcp,https://github.com/Coding-Solo/godot-mcp,JavaScript,4319,406,57,273.9,AI 辅助开发与 LLM 集成
-gdquest-demos/godot-shaders,https://github.com/gdquest-demos/godot-shaders,GDShader,4008,237,6,55.1,美术与创作工具
-TokisanGames/Terrain3D,https://github.com/TokisanGames/Terrain3D,C++,3988,272,91,97.4,地形与世界生成
-MattParkerDev/SharpIDE,https://github.com/MattParkerDev/SharpIDE,C#,3774,134,46,510.6,编辑器、开发工具与语言绑定
-GodotSteam/GodotSteam,https://github.com/GodotSteam/GodotSteam,-,3705,224,0,30.4,编辑器、开发工具与语言绑定
-nathanhoad/godot_dialogue_manager,https://github.com/nathanhoad/godot_dialogue_manager,GDScript,3654,257,17,69.2,对话与叙事
-htdt/godogen,https://github.com/htdt/godogen,Python,3583,316,2,807.9,AI 辅助开发与 LLM 集成
-Revolutionary-Games/Thrive,https://github.com/Revolutionary-Games/Thrive,C#,3580,607,529,21.6,学习资源、模板与示例项目
-ramokz/phantom-camera,https://github.com/ramokz/phantom-camera,GDScript,3410,130,64,78.0,框架与游戏系统
-bitbrain/beehave,https://github.com/bitbrain/beehave,GDScript,3141,164,34,63.3,游戏 AI 与行为
-gdquest-demos/godot-open-rpg,https://github.com/gdquest-demos/godot-open-rpg,GDScript,2831,341,4,30.8,学习资源、模板与示例项目
-limbonaut/limboai,https://github.com/limbonaut/limboai,C++,2817,129,59,80.8,游戏 AI 与行为
-GDQuest/learn-gdscript,https://github.com/GDQuest/learn-gdscript,GDScript,2694,225,124,43.9,学习资源、模板与示例项目
-bitwes/Gut,https://github.com/bitwes/Gut,GDScript,2600,146,73,22.0,编辑器、开发工具与语言绑定
-MewPurPur/GodSVG,https://github.com/MewPurPur/GodSVG,GDScript,2537,115,57,70.2,美术与创作工具
-KsanaDock/Microverse,https://github.com/KsanaDock/Microverse,GDScript,2375,398,10,283.5,AI 辅助开发与 LLM 集成
-Zylann/godot_heightmap_plugin,https://github.com/Zylann/godot_heightmap_plugin,GDScript,2209,182,190,22.0,地形与世界生成
-zfoo-project/zfoo,https://github.com/zfoo-project/zfoo,Java,2003,417,19,32.9,网络与多人
-gdquest-demos/godot-4-procedural-generation,https://github.com/gdquest-demos/godot-4-procedural-generation,GDScript,1862,100,0,25.6,地形与世界生成
-SirRamEsq/SmartShape2D,https://github.com/SirRamEsq/SmartShape2D,GDScript,1707,78,16,19.0,地形与世界生成
-nezvers/Godot-GameTemplate,https://github.com/nezvers/Godot-GameTemplate,GDScript,1598,102,1,20.4,学习资源、模板与示例项目
-gaea-godot/gaea,https://github.com/gaea-godot/gaea,GDScript,1592,92,38,45.8,地形与世界生成
-CraterCrash/godot-orchestrator,https://github.com/CraterCrash/godot-orchestrator,C++,1548,82,131,43.9,编辑器、开发工具与语言绑定
-KoBeWi/Metroidvania-System,https://github.com/KoBeWi/Metroidvania-System,GDScript,1510,81,14,34.3,框架与游戏系统
-edbeeching/godot_rl_agents,https://github.com/edbeeching/godot_rl_agents,Python,1508,112,22,25.3,游戏 AI 与行为
-elringus/sprite-dicing,https://github.com/elringus/sprite-dicing,Rust,1502,154,1,14.3,美术与创作工具
-Maaack/Godot-Game-Template,https://github.com/Maaack/Godot-Game-Template,GDScript,1497,98,18,32.9,学习资源、模板与示例项目
-drwhut/tabletop-club,https://github.com/drwhut/tabletop-club,GDScript,1443,64,86,20.1,学习资源、模板与示例项目
-gdquest-demos/godot-visual-effects,https://github.com/gdquest-demos/godot-visual-effects,GDScript,1262,67,4,17.1,美术与创作工具
-godot-gdunit-labs/gdUnit4,https://github.com/godot-gdunit-labs/gdUnit4,GDScript,1117,66,12,25.1,编辑器、开发工具与语言绑定
-abarichello/godot-ci,https://github.com/abarichello/godot-ci,Dockerfile,1088,166,45,11.8,编辑器、开发工具与语言绑定
-gdquest-demos/godot-2d-space-game,https://github.com/gdquest-demos/godot-2d-space-game,GDScript,1075,134,17,14.0,学习资源、模板与示例项目
-TheDuckCow/godot-road-generator,https://github.com/TheDuckCow/godot-road-generator,GDScript,1069,62,62,24.2,地形与世界生成
-bitbrain/pandora,https://github.com/bitbrain/pandora,GDScript,1059,40,41,27.1,框架与游戏系统
-DmitriySalnikov/godot_debug_draw_3d,https://github.com/DmitriySalnikov/godot_debug_draw_3d,C++,1026,41,7,21.8,编辑器、开发工具与语言绑定
-foxssake/netfox,https://github.com/foxssake/netfox,GDScript,1011,69,41,29.1,网络与多人
-nobodywho-ooo/nobodywho,https://github.com/nobodywho-ooo/nobodywho,Rust,1010,70,35,46.9,AI 辅助开发与 LLM 集成
-Maran23/script-ide,https://github.com/Maran23/script-ide,GDScript,1009,35,6,30.9,编辑器、开发工具与语言绑定
+﻿full_name,url,language,stars,forks,open_issues,stars_per_month,category,indie_game_index
+godotengine/godot,https://github.com/godotengine/godot,C++,112899,25726,18480,755.1,引擎与发行版,100
+Donchitos/Claude-Code-Game-Studios,https://github.com/Donchitos/Claude-Code-Game-Studios,Shell,22010,3181,44,5153.7,AI 辅助开发与 LLM 集成,45
+heroiclabs/nakama,https://github.com/heroiclabs/nakama,Go,12778,1430,124,112.9,网络与多人,50
+godotengine/awesome-godot,https://github.com/godotengine/awesome-godot,-,10210,549,53,76.0,学习资源、模板与示例项目,85
+Orama-Interactive/Pixelorama,https://github.com/Orama-Interactive/Pixelorama,GDScript,9771,516,83,119.0,美术与创作工具,80
+0xFA11/MultiplayerNetworkingResources,https://github.com/0xFA11/MultiplayerNetworkingResources,C,8556,534,2,84.8,学习资源、模板与示例项目,45
+Redot-Engine/redot-engine,https://github.com/Redot-Engine/redot-engine,C++,5880,306,61,56.4,引擎与发行版,30
+dialogic-godot/dialogic,https://github.com/dialogic-godot/dialogic,GDScript,5726,335,168,79.0,对话与叙事,88
+RodZill4/material-maker,https://github.com/RodZill4/material-maker,GDScript,5554,352,311,58.5,美术与创作工具,70
+godotengine/godot-docs,https://github.com/godotengine/godot-docs,reStructuredText,5430,3686,1077,43.0,学习资源、模板与示例项目,95
+liangxiegame/QFramework,https://github.com/liangxiegame/QFramework,C#,5329,857,8,42.8,框架与游戏系统,50
+godot-rust/gdext,https://github.com/godot-rust/gdext,Rust,4904,298,67,103.2,编辑器、开发工具与语言绑定,45
+focus-creative-games/luban,https://github.com/focus-creative-games/luban,C#,4455,714,1,65.6,编辑器、开发工具与语言绑定,40
+Coding-Solo/godot-mcp,https://github.com/Coding-Solo/godot-mcp,JavaScript,4319,406,57,273.9,AI 辅助开发与 LLM 集成,50
+gdquest-demos/godot-shaders,https://github.com/gdquest-demos/godot-shaders,GDShader,4008,237,6,55.1,美术与创作工具,78
+TokisanGames/Terrain3D,https://github.com/TokisanGames/Terrain3D,C++,3988,272,91,97.4,地形与世界生成,65
+MattParkerDev/SharpIDE,https://github.com/MattParkerDev/SharpIDE,C#,3774,134,46,510.6,编辑器、开发工具与语言绑定,35
+GodotSteam/GodotSteam,https://github.com/GodotSteam/GodotSteam,-,3705,224,0,30.4,编辑器、开发工具与语言绑定,75
+nathanhoad/godot_dialogue_manager,https://github.com/nathanhoad/godot_dialogue_manager,GDScript,3654,257,17,69.2,对话与叙事,85
+htdt/godogen,https://github.com/htdt/godogen,Python,3583,316,2,807.9,AI 辅助开发与 LLM 集成,40
+Revolutionary-Games/Thrive,https://github.com/Revolutionary-Games/Thrive,C#,3580,607,529,21.6,学习资源、模板与示例项目,25
+ramokz/phantom-camera,https://github.com/ramokz/phantom-camera,GDScript,3410,130,64,78.0,框架与游戏系统,80
+bitbrain/beehave,https://github.com/bitbrain/beehave,GDScript,3141,164,34,63.3,游戏 AI 与行为,70
+gdquest-demos/godot-open-rpg,https://github.com/gdquest-demos/godot-open-rpg,GDScript,2831,341,4,30.8,学习资源、模板与示例项目,70
+limbonaut/limboai,https://github.com/limbonaut/limboai,C++,2817,129,59,80.8,游戏 AI 与行为,72
+GDQuest/learn-gdscript,https://github.com/GDQuest/learn-gdscript,GDScript,2694,225,124,43.9,学习资源、模板与示例项目,80
+bitwes/Gut,https://github.com/bitwes/Gut,GDScript,2600,146,73,22.0,编辑器、开发工具与语言绑定,68
+MewPurPur/GodSVG,https://github.com/MewPurPur/GodSVG,GDScript,2537,115,57,70.2,美术与创作工具,45
+KsanaDock/Microverse,https://github.com/KsanaDock/Microverse,GDScript,2375,398,10,283.5,AI 辅助开发与 LLM 集成,20
+Zylann/godot_heightmap_plugin,https://github.com/Zylann/godot_heightmap_plugin,GDScript,2209,182,190,22.0,地形与世界生成,55
+zfoo-project/zfoo,https://github.com/zfoo-project/zfoo,Java,2003,417,19,32.9,网络与多人,25
+gdquest-demos/godot-4-procedural-generation,https://github.com/gdquest-demos/godot-4-procedural-generation,GDScript,1862,100,0,25.6,地形与世界生成,60
+SirRamEsq/SmartShape2D,https://github.com/SirRamEsq/SmartShape2D,GDScript,1707,78,16,19.0,地形与世界生成,62
+nezvers/Godot-GameTemplate,https://github.com/nezvers/Godot-GameTemplate,GDScript,1598,102,1,20.4,学习资源、模板与示例项目,65
+gaea-godot/gaea,https://github.com/gaea-godot/gaea,GDScript,1592,92,38,45.8,地形与世界生成,58
+CraterCrash/godot-orchestrator,https://github.com/CraterCrash/godot-orchestrator,C++,1548,82,131,43.9,编辑器、开发工具与语言绑定,60
+KoBeWi/Metroidvania-System,https://github.com/KoBeWi/Metroidvania-System,GDScript,1510,81,14,34.3,框架与游戏系统,55
+edbeeching/godot_rl_agents,https://github.com/edbeeching/godot_rl_agents,Python,1508,112,22,25.3,游戏 AI 与行为,35
+elringus/sprite-dicing,https://github.com/elringus/sprite-dicing,Rust,1502,154,1,14.3,美术与创作工具,50
+Maaack/Godot-Game-Template,https://github.com/Maaack/Godot-Game-Template,GDScript,1497,98,18,32.9,学习资源、模板与示例项目,70
+drwhut/tabletop-club,https://github.com/drwhut/tabletop-club,GDScript,1443,64,86,20.1,学习资源、模板与示例项目,25
+gdquest-demos/godot-visual-effects,https://github.com/gdquest-demos/godot-visual-effects,GDScript,1262,67,4,17.1,美术与创作工具,65
+godot-gdunit-labs/gdUnit4,https://github.com/godot-gdunit-labs/gdUnit4,GDScript,1117,66,12,25.1,编辑器、开发工具与语言绑定,65
+abarichello/godot-ci,https://github.com/abarichello/godot-ci,Dockerfile,1088,166,45,11.8,编辑器、开发工具与语言绑定,60
+gdquest-demos/godot-2d-space-game,https://github.com/gdquest-demos/godot-2d-space-game,GDScript,1075,134,17,14.0,学习资源、模板与示例项目,55
+TheDuckCow/godot-road-generator,https://github.com/TheDuckCow/godot-road-generator,GDScript,1069,62,62,24.2,地形与世界生成,35
+bitbrain/pandora,https://github.com/bitbrain/pandora,GDScript,1059,40,41,27.1,框架与游戏系统,65
+DmitriySalnikov/godot_debug_draw_3d,https://github.com/DmitriySalnikov/godot_debug_draw_3d,C++,1026,41,7,21.8,编辑器、开发工具与语言绑定,55
+foxssake/netfox,https://github.com/foxssake/netfox,GDScript,1011,69,41,29.1,网络与多人,55
+nobodywho-ooo/nobodywho,https://github.com/nobodywho-ooo/nobodywho,Rust,1010,70,35,46.9,AI 辅助开发与 LLM 集成,45
+Maran23/script-ide,https://github.com/Maran23/script-ide,GDScript,1009,35,6,30.9,编辑器、开发工具与语言绑定,58
