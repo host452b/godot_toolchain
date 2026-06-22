@@ -4,6 +4,15 @@
 
 > 配套:[`art_styles_matrix.ipynb`](./art_styles_matrix.ipynb) 是颜色矩阵(GitHub 在线可渲染),数据见 [`art_styles.csv`](./art_styles.csv),由 [`build_notebook.py`](./build_notebook.py) 生成。
 
+## 文档索引
+
+| 文档 | 内容 |
+|---|---|
+| 本文(README) | 20 种 2D 画风总览 + Top 8 + 8 套 Prompt + 通用模板 + 独立开发建议 |
+| [`art_styles_matrix.ipynb`](./art_styles_matrix.ipynb) | 20 种画风颜色矩阵 + 排行(GitHub 在线可渲染) |
+| [`2000-2026-top-art-game.md`](./2000-2026-top-art-game.md) | 2000–2026 历年画面突出获奖游戏美术史(含 3D/写实)+ 风格流派统计与趋势 |
+| [`example/`](./example/) | 各画风的参考示例图 + 还原点 + Prompt(见 [example 索引](./example/README.md)) |
+
 ## 0. 先区分三个概念
 
 | 概念 | 含义 | 示例 |
