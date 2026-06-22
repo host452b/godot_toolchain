@@ -2,9 +2,9 @@
 
 关联总览表 #2 [高精度像素风 / High-detail Pixel Art](../../README.md#1-2d-游戏典型画风总览20-种) × #14 [霓虹赛博 2D 风](../../README.md#1-2d-游戏典型画风总览20-种)。
 
-> ⚠️ **示例图待补传**:本条目文字与 Prompt 已就绪,图片(图2)未随消息上传成功。请重新发送该图,我会放入本目录并补到索引预览。
+![现代霓虹高精像素风 — 雨夜网络武士](./cyber-samurai.png)
 
-> **图 2(待补)**:ultra-detailed 16-bit 风格的网络武士。观察霓虹灯在雨天地面上的清晰反射,以及通过像素网格传达出的电影级光影氛围。
+> **图 2**:ultra-detailed 16-bit 风格的网络武士。观察霓虹灯在雨天地面上的清晰反射,以及通过像素网格传达出的电影级光影氛围。
 
 ## 风格还原点
 
@@ -23,4 +23,4 @@ cinematic volumetric fog, glowing rim light, visible pixel grid, moody atmospher
 
 **Negative**: flat lighting, low contrast, smooth vector art, 3D render, photorealism, muted palette, blurry anti-aliasing.
 
-> 来源:用户描述(图片待补传)。
+> 来源:用户上传示例图(`cyber-samurai.png`)。
