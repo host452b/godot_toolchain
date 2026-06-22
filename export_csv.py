@@ -44,7 +44,6 @@ CATEGORIES = {
     "框架与游戏系统": [
         "liangxiegame/QFramework", "ramokz/phantom-camera",
         "KoBeWi/Metroidvania-System", "bitbrain/pandora", "Kelpekk/Juicee",
-        "Eneskp3441/Shaker", "bbbscarter/event-audio-godot",
     ],
     "学习资源、模板与示例项目": [
         "godotengine/awesome-godot", "0xFA11/MultiplayerNetworkingResources",
@@ -79,7 +78,6 @@ INDIE_INDEX = {
     "DmitriySalnikov/godot_debug_draw_3d": 55, "Maran23/script-ide": 58,
     "liangxiegame/QFramework": 50, "ramokz/phantom-camera": 80,
     "KoBeWi/Metroidvania-System": 55, "bitbrain/pandora": 65, "Kelpekk/Juicee": 60,
-    "Eneskp3441/Shaker": 55, "bbbscarter/event-audio-godot": 50,
     "HungryProton/scatter": 62, "mhgolkar/Arrow": 55,
     "0xFA11/MultiplayerNetworkingResources": 45, "Revolutionary-Games/Thrive": 25,
     "gdquest-demos/godot-open-rpg": 70, "GDQuest/learn-gdscript": 80,
