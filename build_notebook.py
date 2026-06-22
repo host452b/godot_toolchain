@@ -79,7 +79,7 @@ def fmt(col, v):
 
 
 # ── 完整数据表(分页,9px)────────────────────────────────────
-FULL_COLS = ["full_name", "url", "language", "stars", "forks",
+FULL_COLS = ["full_name", "category", "url", "language", "stars", "forks",
              "open_issues", "stars_per_month"]
 
 
@@ -142,6 +142,39 @@ def render_ranking(rank_rows, title):
     return "\n".join(out)
 
 
+# ── 按类型分类对比(每类一表,<hr> 横线分隔)──────────────────
+CMP_COLS = ["full_name", "language", "stars", "forks", "open_issues", "stars_per_month"]
+
+
+def render_category(cat, cat_rows):
+    th = ("background-color:#333;color:#fff;padding:4px 8px;"
+          "white-space:nowrap;text-align:left")
+    td = "padding:3px 8px;white-space:nowrap;border-bottom:1px solid #eee"
+    out = [f"<h3>{cat} <span style='color:#888;font-weight:normal'>"
+           f"({len(cat_rows)})</span></h3>",
+           '<table style="border-collapse:collapse;font-size:11px;'
+           'font-family:system-ui,Arial,sans-serif">']
+    out.append('<tr><th style="' + th + '">#</th>' +
+               "".join(f'<th style="{th}">{c}</th>' for c in CMP_COLS) + "</tr>")
+    for rank, row in enumerate(cat_rows, start=1):
+        cells = [f'<td style="{td};color:#888">{rank}</td>']
+        for c in CMP_COLS:
+            v = row[c]
+            if c == "full_name":
+                cells.append(f'<td style="{td}"><b>{v}</b></td>')
+            elif c in SCORE_COLS:
+                bg = score_bg(to_score10(c, v))
+                cells.append(f'<td style="{td};{bg};text-align:right">{fmt(c, v)}</td>')
+            elif c in VAR_COLS:
+                bg = variance_bg(to_var5(c, v))
+                cells.append(f'<td style="{td};{bg};text-align:right">{int(v):,}</td>')
+            else:
+                cells.append(f'<td style="{td}">{v}</td>')
+        out.append("<tr>" + "".join(cells) + "</tr>")
+    out.append("</table>")
+    return "\n".join(out)
+
+
 def html_cell(html):
     """构造一个无源码、只含 HTML 渲染输出的代码单元。"""
     cell = nbf.v4.new_code_cell(source="")
@@ -171,6 +204,19 @@ top_stars = sorted(rows, key=lambda r: r["stars"], reverse=True)[:15]
 top_growth = sorted(rows, key=lambda r: r["stars_per_month"], reverse=True)[:15]
 cells.append(html_cell(render_ranking(top_stars, "★ Stars 排行 Top 15")))
 cells.append(html_cell(render_ranking(top_growth, "📈 月均涨星 排行 Top 15")))
+
+# 按类型分类对比:类别按首次出现顺序(CSV 已按 stars 降序),类内按 stars 降序,<hr> 分隔
+cat_order = []
+cat_rows = {}
+for r in rows:
+    cat = r["category"]
+    if cat not in cat_rows:
+        cat_order.append(cat)
+        cat_rows[cat] = []
+    cat_rows[cat].append(r)
+cmp_blocks = [render_category(cat, cat_rows[cat]) for cat in cat_order]
+cells.append(nbf.v4.new_markdown_cell("# 按类型分类对比"))
+cells.append(html_cell("\n<hr>\n".join(cmp_blocks)))
 
 nb = nbf.v4.new_notebook()
 nb["cells"] = cells
