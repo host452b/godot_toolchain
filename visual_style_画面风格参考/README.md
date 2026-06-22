@@ -14,7 +14,7 @@
 
 **Steam 欢迎度判定方法**:综合在线/24h 峰值/历史峰值、SteamDB 用户评价、Steam250 长期排名、评论量、榜单与代表作数量。Steam250 中 Stardew Valley、Terraria 长期居前且评论量百万级;SteamDB 显示 Stardew Valley、Terraria、Hollow Knight、Balatro、Hades II、Vampire Survivors、Dead Cells、Slay the Spire 等强 2D 视觉游戏均有高评论量与长期活跃度。
 
-## 1. 2D 游戏典型画风总览(15 种)
+## 1. 2D 游戏典型画风总览(20 种)
 
 | # | 中文画风 | 英文 | 核心视觉特征 | 常见视角 | 适合类型 | 代表作 | 制作难度 | 商业安全性 | Prompt 关键词 |
 |---|---|---|---|---|---|---|---|---|---|
@@ -33,6 +33,11 @@
 | 13 | 低饱和叙事风 | Muted Narrative Art | 灰调、低饱和、写实简化、情绪留白 | 横版/等距/固定镜头 | 叙事/冒险/解谜/社会议题 | Night in the Woods、Oxenfree、Norco | 中 | 中 | muted narrative art, subdued palette |
 | 14 | 霓虹赛博 2D 风 | Neon Cyberpunk 2D | 黑底霓虹、赛博 UI、强反射、紫青色调 | 横版/俯视/等距 | 动作/潜入/射击/解谜 | Katana ZERO、ANNO: Mutationem(2.5D) | 高 | 中 | neon cyberpunk, magenta cyan lighting |
 | 15 | 黑白高对比风 | Monochrome High Contrast | 黑白剪影、硬边阴影、负空间、强构图 | 横版/固定镜头/解谜视角 | 解谜/恐怖/叙事/平台 | Limbo、Return of the Obra Dinn、Minit | 中 | 中 | monochrome, high contrast, silhouette |
+| 16 | 水墨 / 浮世绘风 | Ink Wash / Sumi-e | 墨色晕染、留白、毛笔笔触、东方古典构图 | 横版/卷轴 | 动作/解谜/叙事/平台 | Okami(风格)、Aka、Inkulinati | 高 | 中 | ink wash, sumi-e, brush stroke, negative space |
+| 17 | 矢量扁平风 | Vector Flat | 纯色扁平、几何矢量、无纹理、清爽 | 俯视/任意 | 益智/策略/休闲/模拟 | Mini Motorways、Reigns、Carto | 低 | 中 | vector flat, clean shapes, flat design, mobile friendly |
+| 18 | 涂鸦 / 手账线稿风 | Doodle / Hand-sketch | 简笔 / 火柴人、随性线条、纸感、幽默 | 横版/俯视 | RPG/冒险/解谜/喜剧 | West of Loathing、Draw a Stickman | 低 | 中 | doodle, stick figure, hand-sketch, paper |
+| 19 | 油画 / 厚涂风 | Painterly / Oil Painting | 厚涂笔触、柔和过渡、写意光影、绘画质感 | 横版/2.5D/固定镜头 | 叙事/冒险/解谜 | 11-11 Memories Retold、Old Man's Journey | 高 | 中 | painterly, oil painting, soft brushwork, impasto |
+| 20 | 拼贴 / 混合媒介风 | Collage / Mixed Media | 多媒介拼贴、照片 / 纹理混搭、实验构图 | 横版/固定镜头 | 实验叙事/解谜/艺术游戏 | Kentucky Route Zero(气质)、Genesis Noir | 高 | 弱 | collage, mixed media, cutout, experimental |
 
 ## 2. Steam 玩家最欢迎的 2D 画风 Top 8
 

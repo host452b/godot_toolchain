@@ -89,6 +89,31 @@ STYLES = [
      "适合类型": "解谜/恐怖/叙事/平台", "代表作": "Limbo、Return of the Obra Dinn、Minit",
      "Prompt关键词": "monochrome, high contrast, silhouette",
      "steam": 57, "safe": 50, "diff": 50, "fit": 65},
+    {"序号": 16, "中文画风": "水墨 / 浮世绘风", "英文": "Ink Wash / Sumi-e",
+     "核心视觉特征": "墨色晕染、留白、毛笔笔触、东方古典构图", "常见视角": "横版/卷轴",
+     "适合类型": "动作/解谜/叙事/平台", "代表作": "Okami(风格)、Aka、Inkulinati",
+     "Prompt关键词": "ink wash, sumi-e, brush stroke, negative space",
+     "steam": 50, "safe": 50, "diff": 80, "fit": 40},
+    {"序号": 17, "中文画风": "矢量扁平风", "英文": "Vector Flat",
+     "核心视觉特征": "纯色扁平、几何矢量、无纹理、清爽", "常见视角": "俯视/任意",
+     "适合类型": "益智/策略/休闲/模拟", "代表作": "Mini Motorways、Reigns、Carto",
+     "Prompt关键词": "vector flat, clean shapes, flat design, mobile friendly",
+     "steam": 55, "safe": 55, "diff": 25, "fit": 80},
+    {"序号": 18, "中文画风": "涂鸦 / 手账线稿风", "英文": "Doodle / Hand-sketch",
+     "核心视觉特征": "简笔 / 火柴人、随性线条、纸感、幽默", "常见视角": "横版/俯视",
+     "适合类型": "RPG/冒险/解谜/喜剧", "代表作": "West of Loathing、Draw a Stickman",
+     "Prompt关键词": "doodle, stick figure, hand-sketch, paper",
+     "steam": 48, "safe": 50, "diff": 25, "fit": 78},
+    {"序号": 19, "中文画风": "油画 / 厚涂风", "英文": "Painterly / Oil Painting",
+     "核心视觉特征": "厚涂笔触、柔和过渡、写意光影、绘画质感", "常见视角": "横版/2.5D/固定镜头",
+     "适合类型": "叙事/冒险/解谜", "代表作": "11-11 Memories Retold、Old Man's Journey",
+     "Prompt关键词": "painterly, oil painting, soft brushwork, impasto",
+     "steam": 46, "safe": 45, "diff": 80, "fit": 38},
+    {"序号": 20, "中文画风": "拼贴 / 混合媒介风", "英文": "Collage / Mixed Media",
+     "核心视觉特征": "多媒介拼贴、照片 / 纹理混搭、实验构图", "常见视角": "横版/固定镜头",
+     "适合类型": "实验叙事/解谜/艺术游戏", "代表作": "Kentucky Route Zero(气质)、Genesis Noir",
+     "Prompt关键词": "collage, mixed media, cutout, experimental",
+     "steam": 38, "safe": 35, "diff": 80, "fit": 35},
 ]
 
 CSV_COLS = ["序号", "中文画风", "英文", "核心视觉特征", "常见视角", "适合类型",
@@ -186,13 +211,13 @@ cells = []
 cells.append(nbf.v4.new_markdown_cell(
     "# 2D 游戏画风 · 颜色矩阵\n"
     "\n"
-    "15 种 Steam 常见 2D 画风的对比矩阵。数据来自 `art_styles.csv`。\n"
+    "20 种 Steam 常见 2D 画风的对比矩阵。数据来自 `art_styles.csv`。\n"
     "\n"
     "**色阶**:`Steam欢迎度 / 商业安全性 / 独立适配度` 越高越绿;`制作难度` 反向——"
     "越低越绿(对小团队越友好)。评分为基于原始分析(制作难度 / 商业安全性 / Steam Top8 排名)"
     "派生的主观量化(0–100)。详尽分析、Prompt 模板与开发建议见 `README.md`。"
 ))
-cells.append(html_cell(render_matrix(STYLES, "全 15 种画风对比矩阵(按表序)")))
+cells.append(html_cell(render_matrix(STYLES, "全 20 种画风对比矩阵(按表序)")))
 top8 = sorted(STYLES, key=lambda s: s["steam"], reverse=True)[:8]
 cells.append(html_cell(render_ranking(top8, "★ Steam 欢迎度 Top 8")))
 indie8 = sorted(STYLES, key=lambda s: s["fit"], reverse=True)[:8]
