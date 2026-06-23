@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Tutorials"
+  short_description: "Navigate Godot Tutorials documentation"
+  default_prompt: "Use $godot-docs-tutorials-landing to answer this Godot documentation question from the local godot-docs checkout."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Global illumination"
+  short_description: "Navigate Godot Global illumination"
+  default_prompt: "Use $godot-docs-tutorials-3d-global-illumination to answer this Godot documentation question from the local godot-docs checkout."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Linux"
+  short_description: "Navigate Godot Linux documentation"
+  default_prompt: "Use $godot-docs-tutorials-platform-linux to answer this Godot documentation question from the local godot-docs checkout."

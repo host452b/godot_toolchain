@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Troubleshooting"
+  short_description: "Navigate Godot Troubleshooting"
+  default_prompt: "Use $godot-docs-tutorials-troubleshooting to answer this Godot documentation question from the local godot-docs checkout."

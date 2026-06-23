@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Shading reference"
+  short_description: "Navigate Godot Shading reference"
+  default_prompt: "Use $godot-docs-tutorials-shaders-shader-reference to answer this Godot documentation question from the local godot-docs checkout."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Class reference: Variant types"
+  short_description: "Navigate Godot Class reference: Variant types"
+  default_prompt: "Use $godot-docs-class-reference-variant-types to answer this Godot documentation question from the local godot-docs checkout."

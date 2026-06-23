@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs User interface (UI)"
+  short_description: "Navigate Godot User interface (UI)"
+  default_prompt: "Use $godot-docs-tutorials-ui to answer this Godot documentation question from the local godot-docs checkout."

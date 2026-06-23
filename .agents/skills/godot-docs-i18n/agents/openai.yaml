@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs I18n"
+  short_description: "Work with translated docs"
+  default_prompt: "Use $godot-docs-i18n to work with Godot docs localization, gettext output, translated images, and i18n class reference behavior."

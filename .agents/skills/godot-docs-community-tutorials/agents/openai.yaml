@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Tutorials and resources"
+  short_description: "Navigate Godot Tutorials and resources"
+  default_prompt: "Use $godot-docs-community-tutorials to answer this Godot documentation question from the local godot-docs checkout."

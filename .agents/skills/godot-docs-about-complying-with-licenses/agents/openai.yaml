@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Complying with licenses"
+  short_description: "Navigate Godot Complying with licenses"
+  default_prompt: "Use $godot-docs-about-complying-with-licenses to answer this Godot documentation question from the local godot-docs checkout."

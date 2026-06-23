@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Introduction"
+  short_description: "Navigate Godot Introduction"
+  default_prompt: "Use $godot-docs-getting-started-introduction to answer this Godot documentation question from the local godot-docs checkout."

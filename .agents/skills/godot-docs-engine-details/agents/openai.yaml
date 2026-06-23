@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Engine details"
+  short_description: "Navigate Godot Engine details"
+  default_prompt: "Use $godot-docs-engine-details to answer this Godot documentation question from the local godot-docs checkout."

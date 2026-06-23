@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Find Page From URL"
+  short_description: "Map Godot docs URLs to files"
+  default_prompt: "Use $godot-docs-find-page-from-url to map this Godot docs URL or sidebar route to the matching local reST source file."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Class reference: Resources"
+  short_description: "Navigate Godot Class reference: Resources"
+  default_prompt: "Use $godot-docs-class-reference-resources to answer this Godot documentation question from the local godot-docs checkout."

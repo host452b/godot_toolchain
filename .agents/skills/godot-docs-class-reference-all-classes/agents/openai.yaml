@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Class reference: All classes"
+  short_description: "Navigate Godot Class reference: All classes"
+  default_prompt: "Use $godot-docs-class-reference-all-classes to answer this Godot documentation question from the local godot-docs checkout."

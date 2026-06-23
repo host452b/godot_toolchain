@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Scripting"
+  short_description: "Navigate Godot Scripting documentation"
+  default_prompt: "Use $godot-docs-tutorials-scripting to answer this Godot documentation question from the local godot-docs checkout."

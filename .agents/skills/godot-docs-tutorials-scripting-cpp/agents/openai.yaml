@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs C++ (godot-cpp)"
+  short_description: "Navigate Godot C++ (godot-cpp)"
+  default_prompt: "Use $godot-docs-tutorials-scripting-cpp to answer this Godot documentation question from the local godot-docs checkout."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Audio"
+  short_description: "Navigate Godot Audio documentation"
+  default_prompt: "Use $godot-docs-tutorials-audio to answer this Godot documentation question from the local godot-docs checkout."

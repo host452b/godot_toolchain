@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Editor plugins"
+  short_description: "Navigate Godot Editor plugins"
+  default_prompt: "Use $godot-docs-tutorials-plugins-editor to answer this Godot documentation question from the local godot-docs checkout."

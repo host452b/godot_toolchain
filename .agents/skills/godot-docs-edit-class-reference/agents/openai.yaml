@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Edit Class Reference"
+  short_description: "Handle generated class docs"
+  default_prompt: "Use $godot-docs-edit-class-reference to handle generated Godot class reference changes without hand-editing classes output."

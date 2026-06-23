@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs C# diagnostics"
+  short_description: "Navigate Godot C# diagnostics"
+  default_prompt: "Use $godot-docs-tutorials-scripting-c-sharp-diagnostics to answer this Godot documentation question from the local godot-docs checkout."

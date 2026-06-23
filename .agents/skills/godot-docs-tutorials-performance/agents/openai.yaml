@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Performance"
+  short_description: "Navigate Godot Performance"
+  default_prompt: "Use $godot-docs-tutorials-performance to answer this Godot documentation question from the local godot-docs checkout."

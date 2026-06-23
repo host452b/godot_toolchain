@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Answer Question"
+  short_description: "Answer Godot docs questions"
+  default_prompt: "Use $godot-docs-answer-question to answer this Godot documentation question from local manual, engine-details, and class reference sources."

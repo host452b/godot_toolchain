@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Assets Images"
+  short_description: "Handle docs images/assets"
+  default_prompt: "Use $godot-docs-assets-images to handle Godot docs image, video, static asset, and localized image changes."

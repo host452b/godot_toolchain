@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Godot file formats"
+  short_description: "Navigate Godot Godot file formats"
+  default_prompt: "Use $godot-docs-engine-details-file-formats to answer this Godot documentation question from the local godot-docs checkout."

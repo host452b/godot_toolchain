@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Class API Lookup"
+  short_description: "Lookup Godot class API docs"
+  default_prompt: "Use $godot-docs-class-api-lookup to find this Godot class, method, property, signal, constant, or generated API anchor."

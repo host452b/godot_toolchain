@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Platform-specific"
+  short_description: "Navigate Godot Platform-specific"
+  default_prompt: "Use $godot-docs-tutorials-platform to answer this Godot documentation question from the local godot-docs checkout."

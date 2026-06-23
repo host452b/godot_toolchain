@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Class reference: Globals"
+  short_description: "Navigate Godot Class reference: Globals"
+  default_prompt: "Use $godot-docs-class-reference-globals to answer this Godot documentation question from the local godot-docs checkout."

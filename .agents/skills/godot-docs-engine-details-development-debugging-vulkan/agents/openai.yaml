@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Vulkan"
+  short_description: "Navigate Godot Vulkan documentation"
+  default_prompt: "Use $godot-docs-engine-details-development-debugging-vulkan to answer this Godot documentation question from the local godot-docs checkout."

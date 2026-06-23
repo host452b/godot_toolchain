@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs C#/.NET"
+  short_description: "Navigate Godot C#/.NET documentation"
+  default_prompt: "Use $godot-docs-tutorials-scripting-c-sharp to answer this Godot documentation question from the local godot-docs checkout."

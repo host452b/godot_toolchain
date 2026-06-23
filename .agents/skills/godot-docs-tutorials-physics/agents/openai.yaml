@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Physics"
+  short_description: "Navigate Godot Physics documentation"
+  default_prompt: "Use $godot-docs-tutorials-physics to answer this Godot documentation question from the local godot-docs checkout."

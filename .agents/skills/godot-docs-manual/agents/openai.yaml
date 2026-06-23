@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Manual"
+  short_description: "Navigate Godot Manual documentation"
+  default_prompt: "Use $godot-docs-manual to answer this Godot documentation question from the local godot-docs checkout."

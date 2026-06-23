@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Editor introduction"
+  short_description: "Navigate Godot Editor introduction"
+  default_prompt: "Use $godot-docs-tutorials-editor to answer this Godot documentation question from the local godot-docs checkout."

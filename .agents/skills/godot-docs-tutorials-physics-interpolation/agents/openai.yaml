@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Physics Interpolation"
+  short_description: "Navigate Godot Physics Interpolation"
+  default_prompt: "Use $godot-docs-tutorials-physics-interpolation to answer this Godot documentation question from the local godot-docs checkout."

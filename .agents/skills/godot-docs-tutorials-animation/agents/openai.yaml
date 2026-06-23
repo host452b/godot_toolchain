@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Animation"
+  short_description: "Navigate Godot Animation documentation"
+  default_prompt: "Use $godot-docs-tutorials-animation to answer this Godot documentation question from the local godot-docs checkout."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Math"
+  short_description: "Navigate Godot Math documentation"
+  default_prompt: "Use $godot-docs-tutorials-math to answer this Godot documentation question from the local godot-docs checkout."

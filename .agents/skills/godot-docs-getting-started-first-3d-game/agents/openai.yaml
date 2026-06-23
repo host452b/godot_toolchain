@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Your first 3D game"
+  short_description: "Navigate Godot Your first 3D game"
+  default_prompt: "Use $godot-docs-getting-started-first-3d-game to answer this Godot documentation question from the local godot-docs checkout."

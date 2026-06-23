@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Class reference: Other objects"
+  short_description: "Navigate Godot Class reference: Other objects"
+  default_prompt: "Use $godot-docs-class-reference-other-objects to answer this Godot documentation question from the local godot-docs checkout."

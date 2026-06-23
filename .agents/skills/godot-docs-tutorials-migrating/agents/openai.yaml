@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Migrating to a new version"
+  short_description: "Navigate Godot Migrating to a new version"
+  default_prompt: "Use $godot-docs-tutorials-migrating to answer this Godot documentation question from the local godot-docs checkout."

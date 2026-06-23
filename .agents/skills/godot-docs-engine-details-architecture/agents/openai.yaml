@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Engine architecture"
+  short_description: "Navigate Godot Engine architecture"
+  default_prompt: "Use $godot-docs-engine-details-architecture to answer this Godot documentation question from the local godot-docs checkout."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Community"
+  short_description: "Navigate Godot Community documentation"
+  default_prompt: "Use $godot-docs-community to answer this Godot documentation question from the local godot-docs checkout."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Input handling"
+  short_description: "Navigate Godot Input handling"
+  default_prompt: "Use $godot-docs-tutorials-inputs to answer this Godot documentation question from the local godot-docs checkout."

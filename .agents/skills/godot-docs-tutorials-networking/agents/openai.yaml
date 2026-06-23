@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Networking"
+  short_description: "Navigate Godot Networking"
+  default_prompt: "Use $godot-docs-tutorials-networking to answer this Godot documentation question from the local godot-docs checkout."

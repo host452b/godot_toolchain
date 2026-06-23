@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Redirects"
+  short_description: "Handle moved Godot doc pages"
+  default_prompt: "Use $godot-docs-redirects to handle moved or renamed Godot docs pages and preserve old URL routes."

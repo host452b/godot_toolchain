@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Android"
+  short_description: "Navigate Godot Android documentation"
+  default_prompt: "Use $godot-docs-tutorials-platform-android to answer this Godot documentation question from the local godot-docs checkout."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Animating thousands of objects"
+  short_description: "Navigate Godot Animating thousands of objects"
+  default_prompt: "Use $godot-docs-tutorials-performance-vertex-animation to answer this Godot documentation question from the local godot-docs checkout."

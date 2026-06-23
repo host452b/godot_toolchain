@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Using C++ profilers"
+  short_description: "Navigate Godot Using C++ profilers"
+  default_prompt: "Use $godot-docs-engine-details-development-profiling to answer this Godot documentation question from the local godot-docs checkout."

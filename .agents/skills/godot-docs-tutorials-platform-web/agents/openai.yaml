@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Web"
+  short_description: "Navigate Godot Web documentation"
+  default_prompt: "Use $godot-docs-tutorials-platform-web to answer this Godot documentation question from the local godot-docs checkout."

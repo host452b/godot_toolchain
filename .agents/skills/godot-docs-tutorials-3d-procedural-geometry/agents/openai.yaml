@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Procedural geometry"
+  short_description: "Navigate Godot Procedural geometry"
+  default_prompt: "Use $godot-docs-tutorials-3d-procedural-geometry to answer this Godot documentation question from the local godot-docs checkout."

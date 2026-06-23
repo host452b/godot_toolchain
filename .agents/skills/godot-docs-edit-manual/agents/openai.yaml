@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Edit Manual"
+  short_description: "Edit Godot manual reST pages"
+  default_prompt: "Use $godot-docs-edit-manual to update hand-written Godot reST documentation and keep toctrees, anchors, and style consistent."

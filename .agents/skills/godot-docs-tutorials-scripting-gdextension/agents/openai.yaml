@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs The GDExtension system"
+  short_description: "Navigate Godot The GDExtension system"
+  default_prompt: "Use $godot-docs-tutorials-scripting-gdextension to answer this Godot documentation question from the local godot-docs checkout."

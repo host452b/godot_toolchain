@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs XR"
+  short_description: "Navigate Godot XR documentation"
+  default_prompt: "Use $godot-docs-tutorials-xr to answer this Godot documentation question from the local godot-docs checkout."

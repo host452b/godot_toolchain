@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs List of features"
+  short_description: "Navigate Godot List of features"
+  default_prompt: "Use $godot-docs-about-list-of-features to answer this Godot documentation question from the local godot-docs checkout."

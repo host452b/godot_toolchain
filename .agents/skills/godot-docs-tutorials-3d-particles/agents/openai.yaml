@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Particle systems (3D)"
+  short_description: "Navigate Godot Particle systems (3D)"
+  default_prompt: "Use $godot-docs-tutorials-3d-particles to answer this Godot documentation question from the local godot-docs checkout."

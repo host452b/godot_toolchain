@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Class reference primer"
+  short_description: "Navigate Godot Class reference primer"
+  default_prompt: "Use $godot-docs-engine-details-class-reference to answer this Godot documentation question from the local godot-docs checkout."

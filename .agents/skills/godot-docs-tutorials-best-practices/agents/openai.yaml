@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Best practices"
+  short_description: "Navigate Godot Best practices"
+  default_prompt: "Use $godot-docs-tutorials-best-practices to answer this Godot documentation question from the local godot-docs checkout."

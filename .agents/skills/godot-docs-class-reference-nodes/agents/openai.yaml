@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Class reference: Nodes"
+  short_description: "Navigate Godot Class reference: Nodes"
+  default_prompt: "Use $godot-docs-class-reference-nodes to answer this Godot documentation question from the local godot-docs checkout."

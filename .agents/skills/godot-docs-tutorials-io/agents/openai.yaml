@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs File and data I/O"
+  short_description: "Navigate Godot File and data I/O"
+  default_prompt: "Use $godot-docs-tutorials-io to answer this Godot documentation question from the local godot-docs checkout."

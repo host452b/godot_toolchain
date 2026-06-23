@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Rendering"
+  short_description: "Navigate Godot Rendering documentation"
+  default_prompt: "Use $godot-docs-tutorials-rendering to answer this Godot documentation question from the local godot-docs checkout."

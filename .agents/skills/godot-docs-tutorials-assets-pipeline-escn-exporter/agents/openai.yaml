@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Blender ESCN exporter"
+  short_description: "Navigate Godot Blender ESCN exporter"
+  default_prompt: "Use $godot-docs-tutorials-assets-pipeline-escn-exporter to answer this Godot documentation question from the local godot-docs checkout."

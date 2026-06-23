@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Importing 3D scenes"
+  short_description: "Navigate Godot Importing 3D scenes"
+  default_prompt: "Use $godot-docs-tutorials-assets-pipeline-importing-3d-scenes to answer this Godot documentation question from the local godot-docs checkout."

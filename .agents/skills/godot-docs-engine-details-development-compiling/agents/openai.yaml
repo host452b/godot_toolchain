@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Building from source"
+  short_description: "Navigate Godot Building from source"
+  default_prompt: "Use $godot-docs-engine-details-development-compiling to answer this Godot documentation question from the local godot-docs checkout."

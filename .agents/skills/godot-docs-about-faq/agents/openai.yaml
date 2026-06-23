@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Frequently asked questions"
+  short_description: "Navigate Godot Frequently asked questions"
+  default_prompt: "Use $godot-docs-about-faq to answer this Godot documentation question from the local godot-docs checkout."

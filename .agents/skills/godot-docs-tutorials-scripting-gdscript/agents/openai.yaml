@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs GDScript"
+  short_description: "Navigate Godot GDScript documentation"
+  default_prompt: "Use $godot-docs-tutorials-scripting-gdscript to answer this Godot documentation question from the local godot-docs checkout."

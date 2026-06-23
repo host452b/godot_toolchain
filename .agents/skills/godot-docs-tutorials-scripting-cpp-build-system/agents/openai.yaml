@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Build system"
+  short_description: "Navigate Godot Build system"
+  default_prompt: "Use $godot-docs-tutorials-scripting-cpp-build-system to answer this Godot documentation question from the local godot-docs checkout."

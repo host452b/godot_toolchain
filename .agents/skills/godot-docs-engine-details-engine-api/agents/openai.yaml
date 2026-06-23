@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Engine extension APIs"
+  short_description: "Navigate Godot Engine extension APIs"
+  default_prompt: "Use $godot-docs-engine-details-engine-api to answer this Godot documentation question from the local godot-docs checkout."

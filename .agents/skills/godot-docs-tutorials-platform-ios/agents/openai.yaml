@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs iOS plugins"
+  short_description: "Navigate Godot iOS plugins"
+  default_prompt: "Use $godot-docs-tutorials-platform-ios to answer this Godot documentation question from the local godot-docs checkout."

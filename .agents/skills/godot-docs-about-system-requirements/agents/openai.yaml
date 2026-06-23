@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs System requirements"
+  short_description: "Navigate Godot System requirements"
+  default_prompt: "Use $godot-docs-about-system-requirements to answer this Godot documentation question from the local godot-docs checkout."

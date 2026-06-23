@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Internationalization"
+  short_description: "Navigate Godot Internationalization"
+  default_prompt: "Use $godot-docs-tutorials-i18n to answer this Godot documentation question from the local godot-docs checkout."

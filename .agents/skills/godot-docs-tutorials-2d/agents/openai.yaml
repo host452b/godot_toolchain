@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs 2D"
+  short_description: "Navigate Godot 2D documentation"
+  default_prompt: "Use $godot-docs-tutorials-2d to answer this Godot documentation question from the local godot-docs checkout."

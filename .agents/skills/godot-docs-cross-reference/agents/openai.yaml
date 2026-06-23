@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Cross Reference"
+  short_description: "Work with Godot doc links"
+  default_prompt: "Use $godot-docs-cross-reference to add or repair Godot docs labels, :ref:, :doc:, class anchors, and toctree links."

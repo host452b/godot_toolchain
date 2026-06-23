@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Your first shader"
+  short_description: "Navigate Godot Your first shader"
+  default_prompt: "Use $godot-docs-tutorials-shaders-your-first-shader to answer this Godot documentation question from the local godot-docs checkout."

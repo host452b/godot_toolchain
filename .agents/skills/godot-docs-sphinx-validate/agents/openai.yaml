@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Sphinx Validate"
+  short_description: "Validate Godot docs builds"
+  default_prompt: "Use $godot-docs-sphinx-validate to verify this Godot docs edit with local reST and Sphinx checks."

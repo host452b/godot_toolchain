@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Assets pipeline"
+  short_description: "Navigate Godot Assets pipeline"
+  default_prompt: "Use $godot-docs-tutorials-assets-pipeline to answer this Godot documentation question from the local godot-docs checkout."

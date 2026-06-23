@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Godot release policy"
+  short_description: "Navigate Godot Godot release policy"
+  default_prompt: "Use $godot-docs-about-release-policy to answer this Godot documentation question from the local godot-docs checkout."

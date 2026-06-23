@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Asset Library"
+  short_description: "Navigate Godot Asset Library"
+  default_prompt: "Use $godot-docs-community-asset-library to answer this Godot documentation question from the local godot-docs checkout."

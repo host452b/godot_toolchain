@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Configuring an IDE"
+  short_description: "Navigate Godot Configuring an IDE"
+  default_prompt: "Use $godot-docs-engine-details-development-configuring-an-ide to answer this Godot documentation question from the local godot-docs checkout."

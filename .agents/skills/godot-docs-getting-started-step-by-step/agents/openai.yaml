@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Step by step"
+  short_description: "Navigate Godot Step by step"
+  default_prompt: "Use $godot-docs-getting-started-step-by-step to answer this Godot documentation question from the local godot-docs checkout."

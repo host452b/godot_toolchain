@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Docs Documentation changelog"
+  short_description: "Navigate Godot Documentation changelog"
+  default_prompt: "Use $godot-docs-about-docs-changelog to answer this Godot documentation question from the local godot-docs checkout."
