@@ -13,6 +13,7 @@
 | [低饱和叙事风 / Muted Narrative Art](./muted-narrative/) | #13 | 边境检查站(请出示文件式) | <img src="./muted-narrative/border-checkpoint.png" width="160"> |
 | [高精度像素风 / High-detail Pixel Art](./high-detail-pixel/) | #2 | 苔藓遗迹剑士(HD-2D) | <img src="./high-detail-pixel/swordsman-ruins.png" width="160"> |
 | [手绘马克笔插画风 / Marker Illustration](./marker-illustration/) | 新增(≈#4/#12) | 枝头知更鸟 | <img src="./marker-illustration/marker-robin.png" width="120"> |
+| [超现实日式未来都市 / Surreal Japanese Megacity](./surreal-megacity/) | 新增(叙事插画) | 夜祭俯瞰群像(9:16) | <img src="./surreal-megacity/japanese-megacity.png" width="100"> |
 
 > 待补充:像素风、可爱治愈风、复古街机风 等(见上级 README 的 20 种画风)。
 
