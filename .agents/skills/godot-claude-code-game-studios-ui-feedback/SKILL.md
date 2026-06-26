@@ -29,6 +29,9 @@ For each interactive component:
 
 ## Godot Implementation Map
 
+Before relying on exact class, method, property, or project-setting names,
+cross-check local `godot-docs/classes/class_*.rst` and the relevant manual page.
+
 | Need | Godot tools | Notes |
 |---|---|---|
 | Layout | `Control`, containers, anchors, size flags | Test 16:9, ultrawide, small window, and text scale. |
@@ -57,8 +60,13 @@ philosophy before implementing.
 - Text is readable at the target minimum size.
 - Information is not color-only, sound-only, or motion-only.
 - Subtitles/captions exist where needed.
-- Reduced motion disables non-essential UI motion.
+- A project-level reduced-motion option disables non-essential UI motion.
 - Localized text has room to expand.
+
+## References
+
+- `references/strategy-management-ui-ux-examples.md` - UI/UX examples for
+  interface-driven sandbox, tycoon, and macro strategy games.
 
 ## Common Mistakes
 
@@ -66,4 +74,3 @@ philosophy before implementing.
 - Letting UI code mutate gameplay state directly instead of emitting signals.
 - Treating hover feedback as enough when the game targets gamepad or touch.
 - Designing a HUD after implementation instead of before story acceptance criteria.
-

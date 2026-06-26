@@ -54,6 +54,11 @@ Success signal: [observable behavior or report]
 Stop condition: [time limit or failed risk]
 ```
 
+## References
+
+- `references/strategy-management-prototype-questions.md` - prototype questions
+  for sandbox, tycoon, and systemic strategy loops.
+
 ## Common Mistakes
 
 - Using browser output to judge platformer or combat feel.
@@ -61,4 +66,3 @@ Stop condition: [time limit or failed risk]
 - Testing yourself only and mistaking familiarity for clarity.
 - Treating a throwaway prototype as production architecture.
 - Asking "is it fun?" instead of a falsifiable question.
-

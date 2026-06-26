@@ -30,6 +30,9 @@ spec first if the mechanic itself is still uncertain.
 
 ## Godot Checklist
 
+Before relying on exact class, method, property, or project-setting names,
+cross-check local `godot-docs/classes/class_*.rst` and the relevant manual page.
+
 | Area | Checks |
 |---|---|
 | Camera | `Camera2D/3D` shake is directional, decays, clamps, and respects reduced motion. |
@@ -49,6 +52,11 @@ spec first if the mechanic itself is still uncertain.
 | Player low health | vignette pulse | none | low HP loop ducked | after threshold | HUD icon + color-independent warning |
 ```
 
+## References
+
+- `references/strategy-management-polish-juice-examples.md` - polish and juice
+  examples for sandbox, tycoon, and macro strategy games.
+
 ## Common Mistakes
 
 - Adding juice to hide a design problem.
@@ -56,4 +64,3 @@ spec first if the mechanic itself is still uncertain.
 - Making every event loud, shaky, or flashy so nothing has hierarchy.
 - Treating polish as visual only; audio, feel, accessibility, and QA are part of it.
 - Shipping camera shake without reduced-motion handling.
-

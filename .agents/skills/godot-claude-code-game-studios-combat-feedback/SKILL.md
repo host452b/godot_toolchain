@@ -34,6 +34,9 @@ Tests: [unit/integration/manual feel checks]
 
 ## Godot Implementation Map
 
+Before relying on exact class, method, property, or project-setting names,
+cross-check local `godot-docs/classes/class_*.rst` and the relevant manual page.
+
 | Combat need | Godot tools | Notes |
 |---|---|---|
 | 2D hitboxes | `Area2D`, `CollisionShape2D`, physics layers | Keep hitbox/hurtbox layers explicit. |
@@ -67,4 +70,3 @@ Tests: [unit/integration/manual feel checks]
 - Using one impact sound for hit, block, crit, and death.
 - Adding knockback or hit-stop without preserving player control rules.
 - Failing to expose safe tuning ranges.
-

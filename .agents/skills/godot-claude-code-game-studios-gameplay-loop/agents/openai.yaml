@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Gameplay Loop"
+  short_description: "Define and review Godot core verbs, player fantasy, and gameplay loops"
+  default_prompt: "Use $godot-claude-code-game-studios-gameplay-loop to define this Godot game's core loop."
