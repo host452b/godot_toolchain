@@ -29,13 +29,16 @@ accessibility fallback.
 
 ## Godot Implementation Map
 
+Before relying on exact class, method, property, or project-setting names,
+cross-check local `godot-docs/classes/class_*.rst` and the relevant manual page.
+
 | Need | Godot tool | Notes |
 |---|---|---|
 | One-shot UI/gameplay SFX | `AudioStreamPlayer`, `AudioStreamPlayer2D/3D` | Pool players for frequent sounds. |
 | Mix hierarchy | Audio buses, `AudioServer` | Separate music, ambience, UI, gameplay, voice. |
 | Adaptive music | Multiple players or synchronized stems | Crossfade by state; document transitions. |
 | Spatial cues | `AudioStreamPlayer2D/3D` | Validate attenuation, panning, and max distance. |
-| Reverb/occlusion | Area-triggered bus/effect changes | Keep simple unless the game depends on it. |
+| Reverb / area bus effects | `Area2D/3D` bus routing, `Area3D` reverb buses | Treat occlusion as custom raycast/filter logic unless the project uses middleware. |
 | Variation | Random stream/pitch within safe ranges | Avoid repetition without changing meaning. |
 
 ## Audio Event Spec
@@ -53,6 +56,11 @@ accessibility fallback.
 - Subtitle or caption rules should cover dialogue and critical non-dialogue cues.
 - If an audio cue warns the player, add visual, UI, or haptic backup.
 
+## References
+
+- `references/strategy-management-audio-examples.md` - audio event priority,
+  mix, ambience, reward, and warning examples for strategy/management games.
+
 ## Common Mistakes
 
 - Letting every feature create its own unmanaged `AudioStreamPlayer`.
@@ -60,4 +68,3 @@ accessibility fallback.
 - Using pitch randomization so wide that a sound changes meaning.
 - Mixing ambience over gameplay-critical cues.
 - Creating audio assets before the event list and priority hierarchy are clear.
-

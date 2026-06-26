@@ -74,6 +74,11 @@ For AI, NPC, economy, or complex systemic behavior, one person may secretly
 simulate the system while the player tests normally. Use this to validate desired
 behavior before investing in full implementation.
 
+## References
+
+- `references/strategy-management-slice-checkpoints.md` - vertical-slice
+  checkpoints for sandbox, tycoon, and systemic strategy games.
+
 ## Common Mistakes
 
 - Making a long demo instead of a slice.
@@ -81,4 +86,3 @@ behavior before investing in full implementation.
 - Skipping the velocity log.
 - Treating a local multiplayer slice as proof of network feel without latency tests.
 - Advancing to production after a broken or unfun slice without a deliberate pivot.
-

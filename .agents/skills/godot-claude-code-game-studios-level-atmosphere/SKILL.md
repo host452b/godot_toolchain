@@ -35,12 +35,16 @@ encounters, ambience, VFX, and accessibility must agree before production art is
 
 ## Godot Implementation Map
 
+Before relying on exact class, method, property, or project-setting names,
+cross-check local `godot-docs/classes/class_*.rst` and the relevant manual page.
+
 | Need | Godot tools | Notes |
 |---|---|---|
 | 2D layout | `Node2D`, `TileMapLayer`, `Area2D` triggers | Use collision and camera bounds early. |
-| 3D layout | `Node3D`, `GridMap`, `CSG`, blockout meshes | Validate sightlines before decoration. |
+| 3D layout | `Node3D`, `GridMap`, `CSGBox3D/CSGCombiner3D`, blockout meshes | Use CSG nodes mainly for prototyping; validate sightlines before decoration. |
 | Navigation | `NavigationRegion2D/3D`, `NavigationAgent*` | Check critical path and AI movement separately. |
-| Mood | `WorldEnvironment`, lights, color, fog, canvas effects | Lighting must support readability. |
+| 3D mood | `WorldEnvironment`, lights, color, fog | Lighting must support readability. |
+| 2D mood | `CanvasModulate`, 2D lights, CanvasItem shaders | Keep important silhouettes readable. |
 | Landmarks | geometry, silhouettes, color, animation, sound cues | Do not rely on color alone. |
 | Ambience | `AudioStreamPlayer2D/3D`, buses, area triggers | Layer base ambience, details, and one-shots. |
 | VFX | particles, shaders, weather volumes | Keep readability and performance budgets explicit. |
@@ -61,6 +65,11 @@ encounters, ambience, VFX, and accessibility must agree before production art is
 - Combat spaces preserve contrast between enemy, hazard, reward, and background.
 - Weather, particles, and post-processing do not hide hazards.
 
+## References
+
+- `references/systemic-world-simulation-examples.md` - world map, tycoon layout,
+  and systemic dashboard readability examples.
+
 ## Common Mistakes
 
 - Letting art direction happen after layout, causing landmark and sightline conflicts.
@@ -68,4 +77,3 @@ encounters, ambience, VFX, and accessibility must agree before production art is
 - Using one mood for the whole area instead of an emotional arc.
 - Adding adjacent area references without documenting the connection.
 - Shipping beautiful spaces with no tested critical path.
-

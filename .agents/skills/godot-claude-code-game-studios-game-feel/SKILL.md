@@ -33,9 +33,12 @@ Do not use this for pure economy, save/load, backend, or data-only changes.
 
 ## Godot Implementation Map
 
+Before relying on exact class, method, property, or project-setting names,
+cross-check local `godot-docs/classes/class_*.rst` and the relevant manual page.
+
 | Target | Godot tools | Notes |
 |---|---|---|
-| Input response | `InputMap`, `_unhandled_input`, `_physics_process` | Use buffering and coyote time for action games. |
+| Input response | `InputMap`, `_unhandled_input`, `_physics_process` | Use events for discrete actions and physics ticks for continuous movement. |
 | Commitment | `AnimationPlayer`, `AnimationTree` | Make startup/active/recovery frames explicit. |
 | Hit impact | Signals, hit-stop, SFX/VFX event | Prefer per-actor freeze before global pause. |
 | Camera impact | `Camera2D/3D`, trauma decay | Clamp amplitude and support reduced motion. |
@@ -71,6 +74,11 @@ Do not use this for pure economy, save/load, backend, or data-only changes.
 - [ ] No tester repeats [anti-reference words].
 - [ ] Misses read as fair because [failure cue].
 ```
+
+## References
+
+- `references/interface-driven-juice-examples.md` - non-action game feel and
+  juice examples for sandbox, tycoon, and macro strategy games.
 
 ## Common Mistakes
 

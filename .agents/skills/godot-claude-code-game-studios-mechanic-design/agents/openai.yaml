@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Mechanic Design"
+  short_description: "Specify Godot gameplay mechanics with rules, states, tuning knobs, and acceptance criteria"
+  default_prompt: "Use $godot-claude-code-game-studios-mechanic-design to specify this Godot gameplay mechanic."

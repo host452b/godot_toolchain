@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Balance Check"
+  short_description: "Analyze Godot gameplay tuning, combat math, economy loops, progression, and outliers"
+  default_prompt: "Use $godot-claude-code-game-studios-balance-check to review this Godot system's tuning values."
