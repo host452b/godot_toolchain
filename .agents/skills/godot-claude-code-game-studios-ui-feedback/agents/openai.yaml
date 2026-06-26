@@ -1,0 +1,5 @@
+interface:
+  display_name: "Godot UI Feedback"
+  short_description: "Specify Godot UI and HUD feedback, focus, animation, accessibility, and event behavior"
+  default_prompt: "Use $godot-claude-code-game-studios-ui-feedback to design or review this Godot UI surface."
+

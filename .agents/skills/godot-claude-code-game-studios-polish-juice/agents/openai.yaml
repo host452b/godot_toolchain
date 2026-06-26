@@ -1,0 +1,5 @@
+interface:
+  display_name: "Godot Polish Juice"
+  short_description: "Polish playable Godot features with VFX, audio, camera, performance, and QA checks"
+  default_prompt: "Use $godot-claude-code-game-studios-polish-juice to polish this playable Godot feature."
+

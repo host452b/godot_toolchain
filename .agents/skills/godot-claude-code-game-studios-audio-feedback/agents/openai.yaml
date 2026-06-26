@@ -1,0 +1,5 @@
+interface:
+  display_name: "Godot Audio Feedback"
+  short_description: "Design Godot SFX events, mix hierarchy, adaptive audio, and accessibility fallbacks"
+  default_prompt: "Use $godot-claude-code-game-studios-audio-feedback to define the audio feedback for this Godot feature."
+

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Godot Level Atmosphere"
+  short_description: "Design Godot levels with emotional arc, pacing, lighting, ambience, wayfinding, and accessibility"
+  default_prompt: "Use $godot-claude-code-game-studios-level-atmosphere to design or review this Godot level."
+
