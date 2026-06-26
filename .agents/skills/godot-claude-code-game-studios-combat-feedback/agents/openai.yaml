@@ -1,0 +1,5 @@
+interface:
+  display_name: "Godot Combat Feedback"
+  short_description: "Design Godot combat mechanics with readable hit events, tuning, VFX, SFX, and tests"
+  default_prompt: "Use $godot-claude-code-game-studios-combat-feedback to design or review this Godot combat feature."
+

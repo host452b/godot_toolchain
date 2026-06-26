@@ -1,0 +1,5 @@
+interface:
+  display_name: "Godot Vertical Slice"
+  short_description: "Validate Godot vertical slices for core loop, feel, feasibility, and production readiness"
+  default_prompt: "Use $godot-claude-code-game-studios-vertical-slice-validation to evaluate this Godot vertical slice."
+
