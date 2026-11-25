@@ -6,8 +6,8 @@ set -uo pipefail
 TOPICS=(godot-engine godot4 godot godot-addon gdscript)
 OUT_DIR="data/raw"
 ERR_LOG="$OUT_DIR/errors.log"
-# 今天往前推 3 个月,跨平台(BSD/macOS 用 -v;GNU/Linux 用 -d)
-CUTOFF=$(date -v-3m +%Y-%m-%d 2>/dev/null || date -d '3 months ago' +%Y-%m-%d)
+# 默认今天往前推 3 个月(可通过环境变量 CUTOFF=YYYY-MM-DD 指定上次增量节点)
+CUTOFF="${CUTOFF:-$(date -v-3m +%Y-%m-%d 2>/dev/null || date -d '3 months ago' +%Y-%m-%d)}"
 FIELDS="fullName,name,owner,description,url,homepage,stargazersCount,forksCount,openIssuesCount,language,license,isArchived,isFork,isDisabled,defaultBranch,size,createdAt,updatedAt,pushedAt"
 
 mkdir -p "$OUT_DIR"
